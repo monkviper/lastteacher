@@ -4,7 +4,6 @@
 .htaccess
 sitemap.xml
 sitemap.xml.gz
-wp-config.php
 wp-content/advanced-cache.php
 wp-content/backup-db/
 wp-content/backups/
@@ -13,3 +12,9 @@ wp-content/cache/
 wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
+
+### Editor Files
+.idea/
+
+### Last Teacher Specific
+config/local.php

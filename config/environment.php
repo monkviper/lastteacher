@@ -1,3 +1,0 @@
-<?php
-
-define('LT_ENVIRONMENT', LT_ENVIRONMENT_DEV);

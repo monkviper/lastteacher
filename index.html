@@ -1,302 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Mosaddek">
-    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-    <link rel="shortcut icon" href="img/favicon.png">
-
-    <title>Blank</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-reset.css" rel="stylesheet">
-    <!--external css-->
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-
-    <!--right slidebar-->
-    <link href="css/slidebars.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style-responsive.css" rel="stylesheet" />
-    <link href="assets/morris.js-0.4.3/morris.css" rel="stylesheet" />
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-</head>
-
-<body class="full-width">
-
-    <section id="container" class="">
-        <!--header start-->
-        <header class="header white-bg">
-            <div class="sidebar-toggle-box">
-                <div data-original-title="Toggle Navigation" data-placement="right" class="fa fa-bars tooltips"></div>
-            </div>
-            <!--logo start-->
-            <a href="index.html" class="logo">Last<span>teacher</span></a>
-            <!--logo end-->
-            <div class="nav notify-row" id="top_menu">
-                <!--  notification start -->
-                <ul class="nav top-menu">
-                    <!-- settings start -->
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="fa fa-tasks"></i>
-                            <span class="badge bg-success">2</span>
-                        </a>
-                        <ul class="dropdown-menu extended tasks-bar">
-                            <div class="notify-arrow notify-arrow-green"></div>
-                            <li>
-                                <p class="green">Enrolled Exams - 2</p>
-                            </li>
-                            <li>
-                                <a href="#">
-                                  <div class="task-info">
-                                      <div class="desc">IBPS - PO</div>
-                                      <div class="percent">50%</div>
-                                  </div>
-                                  <div class="progress progress-striped">
-                                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
-                                          <span class="sr-only">50% Complete (success)</span>
-                                      </div>
-                                  </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                  <div class="task-info">
-                                      <div class="desc">SBI - PO</div>
-                                      <div class="percent">90%</div>
-                                  </div>
-                                  <div class="progress progress-striped">
-                                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                          <span class="sr-only">50% Complete (success)</span>
-                                      </div>
-                                  </div>
-                                </a>
-                            </li>
-                            <li class="external">
-                                <button type="button" class="btn btn-shadow btn-danger btn-sm center-block">Get More</button>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- settings end -->
-                    <!-- inbox dropdown start-->
-                    <li id="header_inbox_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <i class="fa fa-envelope-o"></i>
-                            <span class="badge bg-important">5</span>
-                        </a>
-                        <ul class="dropdown-menu extended inbox">
-                            <div class="notify-arrow notify-arrow-red"></div>
-                            <li>
-                                <p class="red">You have 5 new messages</p>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="photo">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="Mosaddek">
+        <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+        <link rel="shortcut icon" href="img/favicon.png">
+        <title>Blank</title>
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-reset.css" rel="stylesheet">
+        <!--external css-->
+        <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <!--right slidebar-->
+        <link href="css/slidebars.css" rel="stylesheet">
+        <!-- Custom styles for this template -->
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/style-responsive.css" rel="stylesheet" />
+        <link href="assets/morris.js-0.4.3/morris.css" rel="stylesheet" />
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body class="full-width">
+        <section id="container" class="">
+            <!--header start-->
+            <header class="header white-bg">
+                <!--logo start-->
+                <a href="index.html" class="logo">Last<span>teacher</span></a>
+                <!--logo end-->
+                <div class="nav notify-row" id="top_menu">
+                    <!--  notification start -->
+                    <ul class="nav top-menu">
+                        <!-- settings start -->
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <i class="fa fa-tasks"></i>
+                                <span class="badge bg-success">2</span>
+                            </a>
+                            <ul class="dropdown-menu extended tasks-bar">
+                                <div class="notify-arrow notify-arrow-green"></div>
+                                <li>
+                                    <p class="green">Enrolled Exams - 2</p>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div class="desc">IBPS - PO</div>
+                                            <div class="percent">50%</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                                                <span class="sr-only">50% Complete (success)</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <div class="task-info">
+                                            <div class="desc">SBI - PO</div>
+                                            <div class="percent">90%</div>
+                                        </div>
+                                        <div class="progress progress-striped">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                                                <span class="sr-only">50% Complete (success)</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="external">
+                                    <button type="button" class="btn btn-shadow btn-danger btn-sm center-block">Get More</button>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- settings end -->
+                        <!-- inbox dropdown start-->
+                        <li id="header_inbox_bar" class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="badge bg-important">5</span>
+                            </a>
+                            <ul class="dropdown-menu extended inbox">
+                                <div class="notify-arrow notify-arrow-red"></div>
+                                <li>
+                                    <p class="red">You have 5 new messages</p>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="photo">
                                         <img alt="avatar" src="./img/avatar-mini.jpg">
-                                    </span>
-                                    <span class="subject">
+                                        </span>
+                                        <span class="subject">
                                         <span class="from">Jonathan Smith</span>
                                         <span class="time">Just now</span>
-                                    </span>
-                                    <span class="message">
+                                        </span>
+                                        <span class="message">
                                         Hello, this is an example msg.
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="photo">
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="photo">
                                         <img alt="avatar" src="./img/avatar-mini2.jpg">
-                                    </span>
-                                    <span class="subject">
+                                        </span>
+                                        <span class="subject">
                                         <span class="from">Jhon Doe</span>
                                         <span class="time">10 mins</span>
-                                    </span>
-                                    <span class="message">
+                                        </span>
+                                        <span class="message">
                                         Hi, Jhon Doe Bhai how are you ?
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="photo">
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="photo">
                                         <img alt="avatar" src="./img/avatar-mini3.jpg">
-                                    </span>
-                                    <span class="subject">
+                                        </span>
+                                        <span class="subject">
                                         <span class="from">Jason Stathum</span>
                                         <span class="time">3 hrs</span>
-                                    </span>
-                                    <span class="message">
+                                        </span>
+                                        <span class="message">
                                         This is awesome dashboard.
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="photo">
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="photo">
                                         <img alt="avatar" src="./img/avatar-mini4.jpg">
-                                    </span>
-                                    <span class="subject">
+                                        </span>
+                                        <span class="subject">
                                         <span class="from">Jondi Rose</span>
                                         <span class="time">Just now</span>
-                                    </span>
-                                    <span class="message">
+                                        </span>
+                                        <span class="message">
                                         Hello, this is metrolab
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">See all messages</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- inbox dropdown end -->
-                    <!-- notification dropdown start-->
-                    <li id="header_notification_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-
-                            <i class="fa fa-bell-o"></i>
-                            <span class="badge bg-warning">7</span>
-                        </a>
-                        <ul class="dropdown-menu extended notification">
-                            <div class="notify-arrow notify-arrow-yellow"></div>
-                            <li>
-                                <p class="yellow">You have 7 new notifications</p>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="label label-danger"><i class="fa fa-bolt"></i>
-                                    </span>
-                                    Server #3 overloaded.
-                                    <span class="small italic">34 mins</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="label label-warning"><i class="fa fa-bell"></i>
-                                    </span>
-                                    Server #10 not respoding.
-                                    <span class="small italic">1 Hours</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="label label-danger"><i class="fa fa-bolt"></i>
-                                    </span>
-                                    Database overloaded 24%.
-                                    <span class="small italic">4 hrs</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="label label-success"><i class="fa fa-plus"></i>
-                                    </span>
-                                    New user registered.
-                                    <span class="small italic">Just now</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <span class="label label-info"><i class="fa fa-bullhorn"></i>
-                                    </span>
-                                    Application error.
-                                    <span class="small italic">10 mins</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">See all notifications</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- notification dropdown end -->
-                </ul>
-            </div>
-            <div class="top-nav ">
-                <ul class="nav pull-right top-menu">
-                    <li>
-                        <input type="text" class="form-control search" placeholder="Search">
-                    </li>
-                    <!-- user login dropdown start-->
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="img/avatar1_small.jpg">
-                            <span class="username">Jhon Doue</span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu extended logout">
-                            <div class="log-arrow-up"></div>
-                            <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-cog"></i> Settings</a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a>
-                            </li>
-                            <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <!-- user login dropdown end -->
-                    <li class="sb-toggle-right">
-                        <i class="fa  fa-align-right"></i>
-                    </li>
-                </ul>
-            </div>
-            <div class="horizontal-menu navbar-collapse collapse ">
-                  <ul class="nav navbar-nav">
-                      <li class="active"><a href="index.html">Dashboard</a></li>
-                      <li class=""><a href="#">Exams</a></li>
-                      <li class=""><a href="#">Challanges</a></li>
-                      <li class=""><a href="#">Friends</a></li>
-                  </ul>
-
-              </div>
-        </header>
-        <!--header end-->
-        <!--main content start-->
-        <section id="main-content">
-            <section class="wrapper site-min-height">
-                <!-- page start-->
-                <div class="row">
-                    <div class="col-lg-3">
-                        <!--user info table start-->
-                        <aside class="profile-nav alt green-border">
-                          <section class="panel">
-                              <div class="user-heading alt green-bg">
-                                  <a href="#">
-                                      <img alt="" src="img/profile-avatar.jpg">
-                                  </a>
-                                  <h1>Monkviper</h1>
-                                  <p>iammonkviper@gmail.com</p>
-                              </div>
-
-                              <ul class="nav nav-pills nav-stacked">
-                                  <li><a href="javascript:;"> <i class="fa fa-tasks"></i> Total Tests <span class="label label-inverse pull-right r-activity">19</span></a></li>
-                                  <li><a href="javascript:;"> <i class="fa fa-exclamation-triangle"></i> Remaining Tests<span class="label label-inverse pull-right r-activity">11</span></a></li>
-                                  <li><a href="javascript:;"> <i class="fa fa fa-chain"></i> Completed Challanges <span class="label label-inverse pull-right r-activity">03</span></a></li>
-                                  <li><a href="javascript:;"> <i class="fa fa-bell-o"></i> Notification <span class="label label-inverse pull-right r-activity">03</span></a></li>
-                                  <li><a href="javascript:;"> <i class="fa fa-envelope-o"></i> Message <span class="label label-inverse pull-right r-activity">10</span></a></li>
-                              </ul>
-
-                          </section>
-                      </aside>
-                        <!--user info table end-->
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">See all messages</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- inbox dropdown end -->
+                        <!-- notification dropdown start-->
+                        <li id="header_notification_bar" class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <i class="fa fa-bell-o"></i>
+                                <span class="badge bg-warning">7</span>
+                            </a>
+                            <ul class="dropdown-menu extended notification">
+                                <div class="notify-arrow notify-arrow-yellow"></div>
+                                <li>
+                                    <p class="yellow">You have 7 new notifications</p>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i>
+                                        </span>
+                                        Server #3 overloaded.
+                                        <span class="small italic">34 mins</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="label label-warning"><i class="fa fa-bell"></i>
+                                        </span>
+                                        Server #10 not respoding.
+                                        <span class="small italic">1 Hours</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="label label-danger"><i class="fa fa-bolt"></i>
+                                        </span>
+                                        Database overloaded 24%.
+                                        <span class="small italic">4 hrs</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="label label-success"><i class="fa fa-plus"></i>
+                                        </span>
+                                        New user registered.
+                                        <span class="small italic">Just now</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="label label-info"><i class="fa fa-bullhorn"></i>
+                                        </span>
+                                        Application error.
+                                        <span class="small italic">10 mins</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">See all notifications</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- notification dropdown end -->
+                    </ul>
+                </div>
+                <div class="top-nav ">
+                    <!--search & user info start-->
+                    <ul class="nav pull-right top-menu">
+                        <li>
+                            <input type="text" class="form-control search" placeholder="Search">
+                        </li>
+                        <!-- user login dropdown start-->
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                <img alt="" src="img/avatar1_small.jpg">
+                                <span class="username">Jhon Doue</span>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu extended logout">
+                                <div class="log-arrow-up"></div>
+                                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                                <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li>
+                                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                            </ul>
+                        </li>
+                        <li class="sb-toggle-right">
+                            <i class="fa  fa-align-right"></i>
+                        </li>
+                        <!-- user login dropdown end -->
+                    </ul>
+                    <!--search & user info end-->
+                </div>
+                <div class="horizontal-menu navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Dashboard</a></li>
+                        <li class=""><a href="#">Exams</a></li>
+                        <li class=""><a href="#">Challanges</a></li>
+                        <li class=""><a href="#">Friends</a></li>
+                    </ul>
+                </div>
+            </header>
+            <!--header end-->
+            <!--main content start-->
+            <section id="main-content">
+                <section class="wrapper site-min-height">
+                    <!-- page start-->
+                    <div class="row state-overview">
+                        <div class="col-lg-3 col-sm-6">
+                            <section class="panel">
+                                <div class="symbol terques">
+                                    <i class="fa fa fa-laptop"></i>
+                                </div>
+                                <div class="value">
+                                    <h1 class="count">
+                                    20
+                                    </h1>
+                                    <p>Pending Exams</p>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <section class="panel">
+                                <div class="symbol red">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <div class="value">
+                                    <h1 class=" count2">
+                                    29
+                                    </h1>
+                                    <p>Days Left</p>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <section class="panel">
+                                <div class="symbol yellow">
+                                    <i class="fa fa-tags"></i>
+                                </div>
+                                <div class="value">
+                                    <h1 class=" count3">
+                                    2
+                                    </h1>
+                                    <p>Enrolled Exams</p>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <section class="panel">
+                                <div class="symbol blue">
+                                    <i class="fa fa-users"></i>
+                                </div>
+                                <div class="value">
+                                    <h1 class=" count4">
+                                    20
+                                    </h1>
+                                    <p>Your Friends</p>
+                                </div>
+                            </section>
+                        </div>
                     </div>
-                    <div class="col-lg-9">
-                        <!--work progress start-->
-                        <section class="panel exam-table">
-                          <header class="panel-heading"><h4>Completed Exams</h4></header>
-                          <table class="table table-striped table-advance table-hover">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <!--user info table start-->
+                            <aside class="profile-nav alt green-border">
+                                <section class="panel">
+                                    <div class="user-heading alt">
+                                        <a href="#" class="user-border">
+                                            <img alt="" src="img/profile-avatar.jpg">
+                                        </a>
+                                        <h1>Monkviper</h1>
+                                        <p>iammonkviper@gmail.com</p>
+                                        <p><a href="#">Edit your profile</a></p>
+                                    </div>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        
+                                        <li><a href="javascript:;"> <i class="fa fa-user"></i> Gender: <strong>Male</strong></a></li>
+                                        <li><a href="javascript:;"> <i class="fa fa-map-marker"></i> Lives in: <strong>Chandigarh</strong></a></li>
+                                        <li><a href="javascript:;"> <i class="fa fa-book"></i> Studied at: <strong>Bright Academy</strong></a></li>
+                                        <li><a href="javascript:;"> <i class="fa fa-file-text-o"></i> Prepering for: <strong>IBPS PO</strong></a></li>
+                                        <li>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </aside>
+                            <!--user info table end-->
+                        </div>
+                        <div class="col-lg-6">
+                            <!--work progress start-->
+                            <section class="panel exam-table">
+                            <header class="panel-heading"><h4>Completed Exams</h4></header>
+                            <table class="table table-advance table-hover">
                                 <thead>
                                     <tr>
                                         <th># Test Numbers</th>
@@ -314,8 +354,8 @@
                                         <td>50 / 200</td>
                                         <td><span class="label label-danger label-mini">Failed</span></td>
                                         <td class="exam-share-icons">
-                                          <a href=""><i class="fa fa-facebook-square fa-lg"></i></a>
-                                          <a href=""><i class="fa fa-twitter-square fa-lg"></i></a>
+                                            <a href=""><i class="fa fa-facebook-square fa-lg"></i></a>
+                                            <a href=""><i class="fa fa-twitter-square fa-lg"></i></a>
                                         </td>
                                         <td><a class="badge" data-toggle="modal" href="#myModal">Add friend</a></td>
                                     </tr>
@@ -325,8 +365,8 @@
                                         <td>150 / 200</td>
                                         <td><span class="label label-success label-mini">Passed</span></td>
                                         <td class="exam-share-icons">
-                                          <a href=""><i class="fa fa-facebook-square fa-lg"></i></a>
-                                          <a href=""><i class="fa fa-twitter-square fa-lg"></i></a>
+                                            <a href=""><i class="fa fa-facebook-square fa-lg"></i></a>
+                                            <a href=""><i class="fa fa-twitter-square fa-lg"></i></a>
                                         </td>
                                         <td><a class="badge" data-toggle="modal" href="#myModal">Add friend</a></td>
                                     </tr>
@@ -336,8 +376,8 @@
                                         <td>50 / 200</td>
                                         <td><span class="label label-danger label-mini">Failed</span></td>
                                         <td class="exam-share-icons">
-                                          <a href=""><i class="fa fa-facebook-square fa-lg"></i></a>
-                                          <a href=""><i class="fa fa-twitter-square fa-lg"></i></a>
+                                            <a href=""><i class="fa fa-facebook-square fa-lg"></i></a>
+                                            <a href=""><i class="fa fa-twitter-square fa-lg"></i></a>
                                         </td>
                                         <td><a class="badge" data-toggle="modal" href="#myModal">Add friend</a></td>
                                     </tr>
@@ -347,8 +387,8 @@
                                         <td>50 / 200</td>
                                         <td><span class="label label-danger label-mini">Failed</span></td>
                                         <td class="exam-share-icons">
-                                          <a href=""><i class="fa fa-facebook-square fa-lg"></i></a>
-                                          <a href=""><i class="fa fa-twitter-square fa-lg"></i></a>
+                                            <a href=""><i class="fa fa-facebook-square fa-lg"></i></a>
+                                            <a href=""><i class="fa fa-twitter-square fa-lg"></i></a>
                                         </td>
                                         <td><a class="badge" data-toggle="modal" href="#myModal">Add friend</a></td>
                                     </tr>
@@ -358,59 +398,96 @@
                                         <td>50 / 200</td>
                                         <td><span class="label label-danger label-mini">Failed</span></td>
                                         <td class="exam-share-icons">
-                                          <a href=""><i class="fa fa-facebook-square fa-lg"></i></a>
-                                          <a href=""><i class="fa fa-twitter-square fa-lg"></i></a>
-                                        </td>
-                                        <td><a class="badge" data-toggle="modal" href="#myModal">Add friend</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="#">Test - 6</a></td>
-                                        <td class="hidden-phone">10 Oct 2014 / 10:18 pm</td>
-                                        <td>50 / 200</td>
-                                        <td><span class="label label-danger label-mini">Failed</span></td>
-                                        <td class="exam-share-icons">
-                                          <a href=""><i class="fa fa-facebook-square fa-lg"></i></a>
-                                          <a href=""><i class="fa fa-twitter-square fa-lg"></i></a>
+                                            <a href=""><i class="fa fa-facebook-square fa-lg"></i></a>
+                                            <a href=""><i class="fa fa-twitter-square fa-lg"></i></a>
                                         </td>
                                         <td><a class="badge" data-toggle="modal" href="#myModal">Add friend</a></td>
                                     </tr>
                                 </tbody>
                                 <tfoot>
-                                    <tr>
-                                        <td colspan="5">
-                                            <div class="dataTables_paginate paging_bootstrap pagination"><ul><li class="prev disabled"><a href="#">← Previous</a></li><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li><li class="next"><a href="#">Next → </a></li></ul></div>    
-                                        </td>
-                                    </tr>
+                                <tr>
+                                    <td colspan="6">
+                                        <div class="dataTables_paginate paging_bootstrap pagination"><ul><li class="prev disabled"><a href="#">← Previous</a></li><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li><li class="next"><a href="#">Next → </a></li></ul></div>
+                                    </td>
+                                </tr>
                                 </tfoot>
-                          </table>
-                          <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
-                                  <div class="modal-dialog">
-                                      <div class="modal-content">
-                                          <div class="modal-header">
-                                              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                              <h4 class="modal-title">List of friends</h4>
-                                          </div>
-                                          <div class="modal-body">
-
-                                              
-
-                                          </div>
-                                          <div class="modal-footer">
-                                              <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
-                                              <button class="btn btn-success" type="button">Add now</button>
-                                          </div>
-                                      </div>
-                                  </div>
+                            </table>
+                            <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title">Choose your friend</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form role="form">
+                                                <p>Add friend by email</p>
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control" placeholder="Email address" id="exampleInputEmail1" placeholder="Enter email">
+                                                </div>
+                                            </form>
+                                            <p>Add friend from your friend list</p>
+                                            <div class="list-group">
+                                                <a class="list-group-item " href="#">
+                                                    Cras justo odio
+                                                </a>
+                                                <a class="list-group-item" href="javascript:;">Dapibus ac facilisis in</a>
+                                                <a class="list-group-item" href="javascript:;">Morbi leo risus</a>
+                                                <a class="list-group-item" href="javascript:;">Porta ac consectetur ac</a>
+                                                <a class="list-group-item" href="javascript:;">Vestibulum at eros</a>
+                                                <a class="list-group-item" href="javascript:;">Vestibulum at eros</a>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                                            <button class="btn btn-success" type="button">Add now</button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                      </section>
+                        </section>
                         <!--work progress end-->
                     </div>
+                    <div class="col-lg-3">
+                        <div class="panel terques-chart">
+                            <div class="panel-body chart-texture">
+                                <div class="chart">
+                                    <div class="heading">
+                                        <span>Friday</span>
+                                        <strong>10 March</strong>
+                                    </div>
+                                    <div class="sparkline" data-type="line" data-resize="true" data-height="95" data-width="90%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[75, 105, 190, 10, 200, 50, 100 ]"></div>
+                                </div>
+                            </div>
+                            <div class="chart-tittle">
+                                <span class="title">Your Performance</span>
+                                <span class="value">
+                                <a href="#" class="active">Full Analyse</a>
+                                </span>
+                            </div>
+                        </div>
+                        <section class="panel">
+                            <header class="panel-heading">
+                                Discussions Room
+                            </header>
+                            <div class="list-group">
+                                <a class="list-group-item" href="#">
+                                    <span class="pull-left">IBPS - PO</span>
+                                    <span class="badge bg-inverse pull-right">Lets talk</span>
+                                </a>
+                                <a class="list-group-item" href="javascript:;">
+                                    <span class="pull-left">RBI - PO</span>
+                                    <span class="badge bg-inverse pull-right">Lets talk</span>
+                                </a>
+                            </div>
+                        </section>
+                    </div>
                 </div>
-                <div class="row">
+                <div class="row recent-exam-full-details">
                     <div class="col-lg-3">
                         <section class="panel">
                             <header class="panel-heading clearfix">
-                                <h4 class="pull-left">Test - 1</h4>
+                                <h4 class="pull-left">Your Recent Exam</h4>
                                 <div class="pull-right">
                                     <span class="badge bg-important">Failed</span>
                                 </div>
@@ -418,760 +495,740 @@
                             <div class="panel-body">
                                 <div class="flot-chart"><div id="graph3" class="chart" style="width:200px; height: 200px;"></div></div>
                                 <div class="exam-score-card">
-                                <table class="table table-striped table-advance table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="2" class="text-center">Your Exam Details</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Total Questions</td>
-                                            <td>200</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Correct</td>
-                                            <td>90</td>
-                                        </tr>
-                                        <tr>
-                                            <td>InCorrect</td>
-                                            <td>60</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Not attempted</td>
-                                            <td>50</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cut off</td>
-                                            <td>98</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Toal Score</td>
-                                            <td>75</td>
-                                        </tr>
-                                         <tr>
-                                            <td>Accuracy</td>
-                                            <td>60%</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                    <table class="table table-striped table-advance table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2" class="text-center">Your Exam Details</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Total Questions</td>
+                                                <td>200</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Correct</td>
+                                                <td>90</td>
+                                            </tr>
+                                            <tr>
+                                                <td>InCorrect</td>
+                                                <td>60</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Not attempted</td>
+                                                <td>50</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Cut off</td>
+                                                <td>98</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Toal Score</td>
+                                                <td>75</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Accuracy</td>
+                                                <td>60%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </section>
-
                     </div>
                     <div class="col-lg-9">
                         <section class="panel">
                             <div class="panel-heading">
-                                <h4>Full Report of all subjects</h4>
+                                <h4>Recent Exam Full Details</h4>
                             </div>
                             <div class="panel-body">
-                            <table class="table subject-reports">
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="bio-chart">
-                                                <input class="knob" data-width="100" data-height="100" data-readOnly=true data-displayPrevious=true  data-thickness=".2" value="28" data-max="50" data-fgColor="#a9d86e" data-bgColor="#e8e8e8">
-                                            </div>
-
-                                            <table class="table table-striped table-advance table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th colspan="2" class="text-center">Math</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Total Questions</td>
-                                                        <td>50</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Attempted</td>
-                                                        <td>40</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Correct</td>
-                                                        <td>30</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>InCorrect</td>
-                                                        <td>10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Cut off</td>
-                                                        <td>17</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Time Taken</td>
-                                                        <td>00:35:33</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Score</td>
-                                                        <td>28</td>
-                                                    </tr>
-                                                     <tr>
-                                                        <td>Accuracy</td>
-                                                        <td>72%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Status</td>
-                                                        <td> <span class="badge bg-success">Pass</span></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                        <td>
-                                            <div class="bio-chart">
-                                                <input class="knob" data-width="100" data-height="100" data-readOnly=true data-displayPrevious=true  data-thickness=".2" value="35" data-max="50" data-fgColor="#a9d86e" data-bgColor="#e8e8e8">
-                                            </div>
-
-                                            <table class="table table-striped table-advance table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th colspan="2" class="text-center">Reasoning</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Total Questions</td>
-                                                        <td>50</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Attempted</td>
-                                                        <td>40</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Correct</td>
-                                                        <td>30</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>InCorrect</td>
-                                                        <td>10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Cut off</td>
-                                                        <td>17</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Time Taken</td>
-                                                        <td>00:35:33</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Score</td>
-                                                        <td>28</td>
-                                                    </tr>
-                                                     <tr>
-                                                        <td>Accuracy</td>
-                                                        <td>72%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Status</td>
-                                                        <td> <span class="badge bg-success">pass</span></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                        <td>
-                                            <div class="bio-chart">
-                                                <input class="knob" data-width="100" data-height="100" data-readOnly=true data-displayPrevious=true  data-thickness=".2" value="10" data-max="50" data-fgColor="#ff6c60" data-bgColor="#e8e8e8">
-                                            </div>
-
-                                            <table class="table table-striped table-advance table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th colspan="2" class="text-center">English</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Total Questions</td>
-                                                        <td>50</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Attempted</td>
-                                                        <td>40</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Correct</td>
-                                                        <td>30</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>InCorrect</td>
-                                                        <td>10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Cut off</td>
-                                                        <td>17</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Time Taken</td>
-                                                        <td>00:35:33</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Score</td>
-                                                        <td>28</td>
-                                                    </tr>
-                                                     <tr>
-                                                        <td>Accuracy</td>
-                                                        <td>72%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Status</td>
-                                                        <td> <span class="badge bg-important">Failed</span></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                        <td>
-                                            
-                                        <div class="bio-chart">
-                                                <input class="knob" data-width="100" data-height="100" data-readOnly=true data-displayPrevious=true  data-thickness=".2" value="5" data-max="50" data-fgColor="#ff6c60" data-bgColor="#e8e8e8">
-                                            </div>
-
-                                            <table class="table table-striped table-advance table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th colspan="2" class="text-center">GK</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Total Questions</td>
-                                                        <td>50</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Attempted</td>
-                                                        <td>40</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Correct</td>
-                                                        <td>30</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>InCorrect</td>
-                                                        <td>10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Cut off</td>
-                                                        <td>17</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Time Taken</td>
-                                                        <td>00:35:33</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Score</td>
-                                                        <td>28</td>
-                                                    </tr>
-                                                     <tr>
-                                                        <td>Accuracy</td>
-                                                        <td>72%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Status</td>
-                                                        <td> <span class="badge bg-important">Failed</span></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                        <td>
-                                            <div class="bio-chart">
-                                                <input class="knob" data-width="100" data-height="100" data-readOnly=true data-displayPrevious=true  data-thickness=".2" value="20" data-max="50" data-fgColor="#ff6c60" data-bgColor="#e8e8e8">
-                                            </div>
-
-                                            <table class="table table-striped table-advance table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th colspan="2" class="text-center">Computer</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Total Questions</td>
-                                                        <td>50</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Attempted</td>
-                                                        <td>40</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Correct</td>
-                                                        <td>30</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>InCorrect</td>
-                                                        <td>10</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Cut off</td>
-                                                        <td>17</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Time Taken</td>
-                                                        <td>00:35:33</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Score</td>
-                                                        <td>28</td>
-                                                    </tr>
-                                                     <tr>
-                                                        <td>Accuracy</td>
-                                                        <td>72%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Status</td>
-                                                        <td> <span class="badge bg-important">Failed</span></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                                <table class="table subject-reports">
+                                    <tbody>
+                                        <tr>
+                                            <td class="around-inner-table">
+                                                <div class="bio-chart">
+                                                    <input class="knob" data-width="100" data-height="100" data-readOnly=true data-displayPrevious=true  data-thickness=".2" value="28" data-max="50" data-fgColor="#a9d86e" data-bgColor="#e8e8e8">
+                                                </div>
+                                                <table class="table table-advance table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-center">Math</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Total Questions</td>
+                                                            <td>50</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Attempted</td>
+                                                            <td>40</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Correct</td>
+                                                            <td>30</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>InCorrect</td>
+                                                            <td>10</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cut off</td>
+                                                            <td>17</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Time Taken</td>
+                                                            <td>00:35:33</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Score</td>
+                                                            <td>28</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Accuracy</td>
+                                                            <td>72%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Status</td>
+                                                            <td> <span class="badge bg-success">Pass</span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td class="around-inner-table">
+                                                <div class="bio-chart">
+                                                    <input class="knob" data-width="100" data-height="100" data-readOnly=true data-displayPrevious=true  data-thickness=".2" value="35" data-max="50" data-fgColor="#a9d86e" data-bgColor="#e8e8e8">
+                                                </div>
+                                                <table class="table table-advance table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-center">Reasoning</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Total Questions</td>
+                                                            <td>50</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Attempted</td>
+                                                            <td>40</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Correct</td>
+                                                            <td>30</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>InCorrect</td>
+                                                            <td>10</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cut off</td>
+                                                            <td>17</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Time Taken</td>
+                                                            <td>00:35:33</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Score</td>
+                                                            <td>28</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Accuracy</td>
+                                                            <td>72%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Status</td>
+                                                            <td> <span class="badge bg-success">pass</span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td class="around-inner-table">
+                                                <div class="bio-chart">
+                                                    <input class="knob" data-width="100" data-height="100" data-readOnly=true data-displayPrevious=true  data-thickness=".2" value="10" data-max="50" data-fgColor="#ff6c60" data-bgColor="#e8e8e8">
+                                                </div>
+                                                <table class="table table-advance table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-center">English</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Total Questions</td>
+                                                            <td>50</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Attempted</td>
+                                                            <td>40</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Correct</td>
+                                                            <td>30</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>InCorrect</td>
+                                                            <td>10</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cut off</td>
+                                                            <td>17</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Time Taken</td>
+                                                            <td>00:35:33</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Score</td>
+                                                            <td>28</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Accuracy</td>
+                                                            <td>72%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Status</td>
+                                                            <td> <span class="badge bg-important">Failed</span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td class="around-inner-table">
+                                                
+                                                <div class="bio-chart">
+                                                    <input class="knob" data-width="100" data-height="100" data-readOnly=true data-displayPrevious=true  data-thickness=".2" value="5" data-max="50" data-fgColor="#ff6c60" data-bgColor="#e8e8e8">
+                                                </div>
+                                                <table class="table table-advance table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-center">GK</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Total Questions</td>
+                                                            <td>50</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Attempted</td>
+                                                            <td>40</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Correct</td>
+                                                            <td>30</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>InCorrect</td>
+                                                            <td>10</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cut off</td>
+                                                            <td>17</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Time Taken</td>
+                                                            <td>00:35:33</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Score</td>
+                                                            <td>28</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Accuracy</td>
+                                                            <td>72%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Status</td>
+                                                            <td> <span class="badge bg-important">Failed</span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td class="around-inner-table">
+                                                <div class="bio-chart">
+                                                    <input class="knob" data-width="100" data-height="100" data-readOnly=true data-displayPrevious=true  data-thickness=".2" value="20" data-max="50" data-fgColor="#ff6c60" data-bgColor="#e8e8e8">
+                                                </div>
+                                                <table class="table table-advance table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th colspan="2" class="text-center">Computer</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Total Questions</td>
+                                                            <td>50</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Attempted</td>
+                                                            <td>40</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Correct</td>
+                                                            <td>30</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>InCorrect</td>
+                                                            <td>10</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cut off</td>
+                                                            <td>17</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Time Taken</td>
+                                                            <td>00:35:33</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Score</td>
+                                                            <td>28</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Accuracy</td>
+                                                            <td>72%</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Status</td>
+                                                            <td> <span class="badge bg-important">Failed</span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </section>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-12">
-                    <!--widget start-->
-                        <header class="panel-heading">
-                            <h4>Performances Index</h4>
-                      </header>
-                      <section class="panel">
-                          <header class="panel-heading tab-bg-dark-navy-blue">
-                              <ul class="nav nav-tabs nav-justified ">
-                                <li class="active">
-                                      <a href="#overall" data-toggle="tab">
-                                          Overall
-                                      </a>
-                                  </li>
-                                  <li>
-                                      <a href="#math" data-toggle="tab">
-                                          Math
-                                      </a>
-                                  </li>
-                                  <li>
-                                      <a href="#reasoning" data-toggle="tab">
-                                          Reasoning
-                                      </a>
-                                  </li>
-                                  <li class="">
-                                      <a href="#english" data-toggle="tab">
-                                          English
-                                      </a>
-                                  </li>
-                                 <li class="">
-                                      <a href="#gk" data-toggle="tab">
-                                          GK
-                                      </a>
-                                  </li>
-                                 <li class="">
-                                      <a href="#computer" data-toggle="tab">
-                                          Computer
-                                      </a>
-                                  </li>
-                              </ul>
-                          </header>
-                          <div class="panel-body">
-                              <div class="tab-content tasi-tab">
-                                  <div class="tab-pane active" id="overall">
-                                      <!--custom chart start-->
-                                      <div class="custom-bar-chart">
-                                          <ul class="y-axis">
-                                              <li><span>200</span></li>
-                                              <li><span>160</span></li>
-                                              <li><span>120</span></li>
-                                              <li><span>80</span></li>
-                                              <li><span>40</span></li>
-                                              <li><span>0</span></li>
-                                          </ul>
-                                          <div class="bar">
-                                              <div class="title">Test - 1 </div>
-                                              <div class="value tooltips" data-original-title="200" data-toggle="tooltip" data-placement="top">70%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 2 </div>
-                                              <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">50%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 3 </div>
-                                              <div class="value tooltips" data-original-title="40%" data-toggle="tooltip" data-placement="top">40%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 4 </div>
-                                              <div class="value tooltips" data-original-title="55%" data-toggle="tooltip" data-placement="top">55%</div>
-                                          </div>
-                                      </div>
-                                      <!--custom chart end-->
-                                  </div>
-                                 <div class="tab-pane" id="math">
-                                      <!--custom chart start-->
-                                      <div class="custom-bar-chart">
-                                          <ul class="y-axis">
-                                              <li><span>50</span></li>
-                                              <li><span>40</span></li>
-                                              <li><span>30</span></li>
-                                              <li><span>20</span></li>
-                                              <li><span>10</span></li>
-                                              <li><span>0</span></li>
-                                          </ul>
-                                          <div class="bar">
-                                              <div class="title">Test - 1 </div>
-                                              <div class="value tooltips" data-original-title="200" data-toggle="tooltip" data-placement="top">70%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 2 </div>
-                                              <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">40%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 3 </div>
-                                              <div class="value tooltips" data-original-title="40%" data-toggle="tooltip" data-placement="top">30%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 4 </div>
-                                              <div class="value tooltips" data-original-title="55%" data-toggle="tooltip" data-placement="top">15%</div>
-                                          </div>
-                                      </div>
-                                      <!--custom chart end-->
-                                  </div>
-                                    <div class="tab-pane" id="reasoning">
-                                      <!--custom chart start-->
-                                      <div class="custom-bar-chart">
-                                          <ul class="y-axis">
-                                              <li><span>50</span></li>
-                                              <li><span>40</span></li>
-                                              <li><span>30</span></li>
-                                              <li><span>20</span></li>
-                                              <li><span>10</span></li>
-                                              <li><span>0</span></li>
-                                          </ul>
-                                          <div class="bar">
-                                              <div class="title">Test - 1 </div>
-                                              <div class="value tooltips" data-original-title="200" data-toggle="tooltip" data-placement="top">10%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 2 </div>
-                                              <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">50%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 3 </div>
-                                              <div class="value tooltips" data-original-title="40%" data-toggle="tooltip" data-placement="top">30%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 4 </div>
-                                              <div class="value tooltips" data-original-title="55%" data-toggle="tooltip" data-placement="top">45%</div>
-                                          </div>
-                                      </div>
-                                      <!--custom chart end-->
-                                  </div>
-                                  <div class="tab-pane" id="english">
-                                      <!--custom chart start-->
-                                      <div class="custom-bar-chart">
-                                          <ul class="y-axis">
-                                              <li><span>40</span></li>
-                                              <li><span>32</span></li>
-                                              <li><span>24</span></li>
-                                              <li><span>16</span></li>
-                                              <li><span>8</span></li>
-                                              <li><span>0</span></li>
-                                          </ul>
-                                          <div class="bar">
-                                              <div class="title">Test - 1 </div>
-                                              <div class="value tooltips" data-original-title="200" data-toggle="tooltip" data-placement="top">100%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 2 </div>
-                                              <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">50%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 3 </div>
-                                              <div class="value tooltips" data-original-title="40%" data-toggle="tooltip" data-placement="top">42%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 4 </div>
-                                              <div class="value tooltips" data-original-title="55%" data-toggle="tooltip" data-placement="top">45%</div>
-                                          </div>
-                                      </div>
-                                      <!--custom chart end-->
-                                  </div>
-                                  <div class="tab-pane" id="gk">
-                                      <!--custom chart start-->
-                                      <div class="custom-bar-chart">
-                                          <ul class="y-axis">
-                                              <li><span>40</span></li>
-                                              <li><span>32</span></li>
-                                              <li><span>24</span></li>
-                                              <li><span>16</span></li>
-                                              <li><span>8</span></li>
-                                              <li><span>0</span></li>
-                                          </ul>
-                                          <div class="bar">
-                                              <div class="title">Test - 1 </div>
-                                              <div class="value tooltips" data-original-title="200" data-toggle="tooltip" data-placement="top">70%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 2 </div>
-                                              <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">40%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 3 </div>
-                                              <div class="value tooltips" data-original-title="40%" data-toggle="tooltip" data-placement="top">50%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 4 </div>
-                                              <div class="value tooltips" data-original-title="55%" data-toggle="tooltip" data-placement="top">58%</div>
-                                          </div>
-                                      </div>
-                                      <!--custom chart end-->
-                                  </div>
-                                  <div class="tab-pane" id="computer">
-                                      <!--custom chart start-->
-                                      <div class="custom-bar-chart">
-                                          <ul class="y-axis">
-                                              <li><span>20</span></li>
-                                              <li><span>16</span></li>
-                                              <li><span>12</span></li>
-                                              <li><span>8</span></li>
-                                              <li><span>4</span></li>
-                                              <li><span>0</span></li>
-                                          </ul>
-                                          <div class="bar">
-                                              <div class="title">Test - 1 </div>
-                                              <div class="value tooltips" data-original-title="200" data-toggle="tooltip" data-placement="top">10%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 2 </div>
-                                              <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">60%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 3 </div>
-                                              <div class="value tooltips" data-original-title="40%" data-toggle="tooltip" data-placement="top">10%</div>
-                                          </div>
-                                          <div class="bar ">
-                                              <div class="title">Test - 4 </div>
-                                              <div class="value tooltips" data-original-title="55%" data-toggle="tooltip" data-placement="top">50%</div>
-                                          </div>
-                                      </div>
-                                      <!--custom chart end-->
-                                  </div>
-                              </div>
-                          </div>
-                      </section>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-6">
+                        
                         <section class="panel">
                             <header class="panel-heading">
-                                Challanges Graph
-                            </header><!-- /header -->
-                            <div class="panel-body" id="morris">
-                                <div id="hero-area" class="graph"></div>
+                                <h4>Overall Performances Card</h4>
+                            </header>
+                            <div class="panel-body">
+                                <ul class="nav nav-tabs nav-justified ">
+                                    <li class="active">
+                                        <a href="#overall" data-toggle="tab">
+                                            Overall
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#math" data-toggle="tab">
+                                            Math
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#reasoning" data-toggle="tab">
+                                            Reasoning
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="#english" data-toggle="tab">
+                                            English
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="#gk" data-toggle="tab">
+                                            GK
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="#computer" data-toggle="tab">
+                                            Computer
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content tasi-tab">
+                                    <div class="tab-pane active" id="overall">
+                                        <!--custom chart start-->
+                                        <div class="custom-bar-chart">
+                                            <ul class="y-axis">
+                                                <li><span>200</span></li>
+                                                <li><span>160</span></li>
+                                                <li><span>120</span></li>
+                                                <li><span>80</span></li>
+                                                <li><span>40</span></li>
+                                                <li><span>0</span></li>
+                                            </ul>
+                                            <div class="bar">
+                                                <div class="title">T - 1 </div>
+                                                <div class="value tooltips" data-original-title="200" data-toggle="tooltip" data-placement="top">70%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">T - 2 </div>
+                                                <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">50%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">T - 3 </div>
+                                                <div class="value tooltips" data-original-title="40%" data-toggle="tooltip" data-placement="top">40%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">T - 4</div>
+                                                <div class="value tooltips" data-original-title="55%" data-toggle="tooltip" data-placement="top">55%</div>
+                                            </div>
+                                        </div>
+                                        <!--custom chart end-->
+                                    </div>
+                                    <div class="tab-pane" id="math">
+                                        <!--custom chart start-->
+                                        <div class="custom-bar-chart">
+                                            <ul class="y-axis">
+                                                <li><span>50</span></li>
+                                                <li><span>40</span></li>
+                                                <li><span>30</span></li>
+                                                <li><span>20</span></li>
+                                                <li><span>10</span></li>
+                                                <li><span>0</span></li>
+                                            </ul>
+                                            <div class="bar">
+                                                <div class="title">Test - 1 </div>
+                                                <div class="value tooltips" data-original-title="200" data-toggle="tooltip" data-placement="top">70%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">Test - 2 </div>
+                                                <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">40%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">Test - 3 </div>
+                                                <div class="value tooltips" data-original-title="40%" data-toggle="tooltip" data-placement="top">30%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">Test - 4 </div>
+                                                <div class="value tooltips" data-original-title="55%" data-toggle="tooltip" data-placement="top">15%</div>
+                                            </div>
+                                        </div>
+                                        <!--custom chart end-->
+                                    </div>
+                                    <div class="tab-pane" id="reasoning">
+                                        <!--custom chart start-->
+                                        <div class="custom-bar-chart">
+                                            <ul class="y-axis">
+                                                <li><span>50</span></li>
+                                                <li><span>40</span></li>
+                                                <li><span>30</span></li>
+                                                <li><span>20</span></li>
+                                                <li><span>10</span></li>
+                                                <li><span>0</span></li>
+                                            </ul>
+                                            <div class="bar">
+                                                <div class="title">Test - 1 </div>
+                                                <div class="value tooltips" data-original-title="200" data-toggle="tooltip" data-placement="top">10%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">Test - 2 </div>
+                                                <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">50%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">Test - 3 </div>
+                                                <div class="value tooltips" data-original-title="40%" data-toggle="tooltip" data-placement="top">30%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">Test - 4 </div>
+                                                <div class="value tooltips" data-original-title="55%" data-toggle="tooltip" data-placement="top">45%</div>
+                                            </div>
+                                        </div>
+                                        <!--custom chart end-->
+                                    </div>
+                                    <div class="tab-pane" id="english">
+                                        <!--custom chart start-->
+                                        <div class="custom-bar-chart">
+                                            <ul class="y-axis">
+                                                <li><span>40</span></li>
+                                                <li><span>32</span></li>
+                                                <li><span>24</span></li>
+                                                <li><span>16</span></li>
+                                                <li><span>8</span></li>
+                                                <li><span>0</span></li>
+                                            </ul>
+                                            <div class="bar">
+                                                <div class="title">Test - 1 </div>
+                                                <div class="value tooltips" data-original-title="200" data-toggle="tooltip" data-placement="top">100%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">Test - 2 </div>
+                                                <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">50%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">Test - 3 </div>
+                                                <div class="value tooltips" data-original-title="40%" data-toggle="tooltip" data-placement="top">42%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">Test - 4 </div>
+                                                <div class="value tooltips" data-original-title="55%" data-toggle="tooltip" data-placement="top">45%</div>
+                                            </div>
+                                        </div>
+                                        <!--custom chart end-->
+                                    </div>
+                                    <div class="tab-pane" id="gk">
+                                        <!--custom chart start-->
+                                        <div class="custom-bar-chart">
+                                            <ul class="y-axis">
+                                                <li><span>40</span></li>
+                                                <li><span>32</span></li>
+                                                <li><span>24</span></li>
+                                                <li><span>16</span></li>
+                                                <li><span>8</span></li>
+                                                <li><span>0</span></li>
+                                            </ul>
+                                            <div class="bar">
+                                                <div class="title">Test - 1 </div>
+                                                <div class="value tooltips" data-original-title="200" data-toggle="tooltip" data-placement="top">70%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">Test - 2 </div>
+                                                <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">40%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">Test - 3 </div>
+                                                <div class="value tooltips" data-original-title="40%" data-toggle="tooltip" data-placement="top">50%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">Test - 4 </div>
+                                                <div class="value tooltips" data-original-title="55%" data-toggle="tooltip" data-placement="top">58%</div>
+                                            </div>
+                                        </div>
+                                        <!--custom chart end-->
+                                    </div>
+                                    <div class="tab-pane" id="computer">
+                                        <!--custom chart start-->
+                                        <div class="custom-bar-chart">
+                                            <ul class="y-axis">
+                                                <li><span>20</span></li>
+                                                <li><span>16</span></li>
+                                                <li><span>12</span></li>
+                                                <li><span>8</span></li>
+                                                <li><span>4</span></li>
+                                                <li><span>0</span></li>
+                                            </ul>
+                                            <div class="bar">
+                                                <div class="title">Test - 1 </div>
+                                                <div class="value tooltips" data-original-title="200" data-toggle="tooltip" data-placement="top">10%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">Test - 2 </div>
+                                                <div class="value tooltips" data-original-title="50%" data-toggle="tooltip" data-placement="top">60%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">Test - 3 </div>
+                                                <div class="value tooltips" data-original-title="40%" data-toggle="tooltip" data-placement="top">10%</div>
+                                            </div>
+                                            <div class="bar ">
+                                                <div class="title">Test - 4 </div>
+                                                <div class="value tooltips" data-original-title="55%" data-toggle="tooltip" data-placement="top">50%</div>
+                                            </div>
+                                        </div>
+                                        <!--custom chart end-->
+                                    </div>
+                                </div>
                             </div>
                         </section>
                     </div>
-                </div>
-                <!-- page end-->
+                    
+                    <div class="col-lg-6">
+                        <section class="panel">
+                            <header class="panel-heading">
+                                <h4>Challanges Graph</h4>
+                                
+                                </header><!-- /header -->
+                                <div class="panel-body" id="morris">
+                                    <div id="hero-area" class="graph" style="height: 390px;"></div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <!-- page end-->
+                </section>
             </section>
-        </section>
-        <!--main content end-->
-
-        <!-- Right Slidebar start -->
-        <div class="sb-slidebar sb-right sb-style-overlay">
-            <h5 class="side-title">Online Customers</h5>
-            <ul class="quick-chat-list">
-                <li class="online">
-                    <div class="media">
-                        <a href="#" class="pull-left media-thumb">
-                            <img alt="" src="img/chat-avatar2.jpg" class="media-object">
+            <!--main content end-->
+            <!-- Right Slidebar start -->
+            <div class="sb-slidebar sb-right sb-style-overlay">
+                <h5 class="side-title">Online Customers</h5>
+                <ul class="quick-chat-list">
+                    <li class="online">
+                        <div class="media">
+                            <a href="#" class="pull-left media-thumb">
+                                <img alt="" src="img/chat-avatar2.jpg" class="media-object">
+                            </a>
+                            <div class="media-body">
+                                <strong>John Doe</strong>
+                                <small>Dream Land, AU</small>
+                            </div>
+                        </div>
+                        <!-- media -->
+                    </li>
+                    <li class="online">
+                        <div class="media">
+                            <a href="#" class="pull-left media-thumb">
+                                <img alt="" src="img/chat-avatar.jpg" class="media-object">
+                            </a>
+                            <div class="media-body">
+                                <div class="media-status">
+                                    <span class=" badge bg-important">3</span>
+                                </div>
+                                <strong>Jonathan Smith</strong>
+                                <small>United States</small>
+                            </div>
+                        </div>
+                        <!-- media -->
+                    </li>
+                    <li class="online">
+                        <div class="media">
+                            <a href="#" class="pull-left media-thumb">
+                                <img alt="" src="img/pro-ac-1.png" class="media-object">
+                            </a>
+                            <div class="media-body">
+                                <div class="media-status">
+                                    <span class=" badge bg-success">5</span>
+                                </div>
+                                <strong>Jane Doe</strong>
+                                <small>ABC, USA</small>
+                            </div>
+                        </div>
+                        <!-- media -->
+                    </li>
+                    <li class="online">
+                        <div class="media">
+                            <a href="#" class="pull-left media-thumb">
+                                <img alt="" src="img/avatar1.jpg" class="media-object">
+                            </a>
+                            <div class="media-body">
+                                <strong>Anjelina Joli</strong>
+                                <small>Fockland, UK</small>
+                            </div>
+                        </div>
+                        <!-- media -->
+                    </li>
+                    <li class="online">
+                        <div class="media">
+                            <a href="#" class="pull-left media-thumb">
+                                <img alt="" src="img/mail-avatar.jpg" class="media-object">
+                            </a>
+                            <div class="media-body">
+                                <div class="media-status">
+                                    <span class=" badge bg-warning">7</span>
+                                </div>
+                                <strong>Mr Tasi</strong>
+                                <small>Dream Land, USA</small>
+                            </div>
+                        </div>
+                        <!-- media -->
+                    </li>
+                </ul>
+                <h5 class="side-title">pending Task</h5>
+                <ul class="p-task tasks-bar">
+                    <li>
+                        <a href="#">
+                            <div class="task-info">
+                                <div class="desc">Dashboard v1.3</div>
+                                <div class="percent">40%</div>
+                            </div>
+                            <div class="progress progress-striped">
+                                <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-success">
+                                    <span class="sr-only">40% Complete (success)</span>
+                                </div>
+                            </div>
                         </a>
-                        <div class="media-body">
-                            <strong>John Doe</strong>
-                            <small>Dream Land, AU</small>
-                        </div>
-                    </div>
-                    <!-- media -->
-                </li>
-                <li class="online">
-                    <div class="media">
-                        <a href="#" class="pull-left media-thumb">
-                            <img alt="" src="img/chat-avatar.jpg" class="media-object">
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="task-info">
+                                <div class="desc">Database Update</div>
+                                <div class="percent">60%</div>
+                            </div>
+                            <div class="progress progress-striped">
+                                <div style="width: 60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar progress-bar-warning">
+                                    <span class="sr-only">60% Complete (warning)</span>
+                                </div>
+                            </div>
                         </a>
-                        <div class="media-body">
-                            <div class="media-status">
-                                <span class=" badge bg-important">3</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="task-info">
+                                <div class="desc">Iphone Development</div>
+                                <div class="percent">87%</div>
                             </div>
-                            <strong>Jonathan Smith</strong>
-                            <small>United States</small>
-                        </div>
-                    </div>
-                    <!-- media -->
-                </li>
-
-                <li class="online">
-                    <div class="media">
-                        <a href="#" class="pull-left media-thumb">
-                            <img alt="" src="img/pro-ac-1.png" class="media-object">
+                            <div class="progress progress-striped">
+                                <div style="width: 87%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" role="progressbar" class="progress-bar progress-bar-info">
+                                    <span class="sr-only">87% Complete</span>
+                                </div>
+                            </div>
                         </a>
-                        <div class="media-body">
-                            <div class="media-status">
-                                <span class=" badge bg-success">5</span>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="task-info">
+                                <div class="desc">Mobile App</div>
+                                <div class="percent">33%</div>
                             </div>
-                            <strong>Jane Doe</strong>
-                            <small>ABC, USA</small>
-                        </div>
-                    </div>
-                    <!-- media -->
-                </li>
-                <li class="online">
-                    <div class="media">
-                        <a href="#" class="pull-left media-thumb">
-                            <img alt="" src="img/avatar1.jpg" class="media-object">
+                            <div class="progress progress-striped">
+                                <div style="width: 33%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar progress-bar-danger">
+                                    <span class="sr-only">33% Complete (danger)</span>
+                                </div>
+                            </div>
                         </a>
-                        <div class="media-body">
-                            <strong>Anjelina Joli</strong>
-                            <small>Fockland, UK</small>
-                        </div>
-                    </div>
-                    <!-- media -->
-                </li>
-                <li class="online">
-                    <div class="media">
-                        <a href="#" class="pull-left media-thumb">
-                            <img alt="" src="img/mail-avatar.jpg" class="media-object">
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="task-info">
+                                <div class="desc">Dashboard v1.3</div>
+                                <div class="percent">45%</div>
+                            </div>
+                            <div class="progress progress-striped active">
+                                <div style="width: 45%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="45" role="progressbar" class="progress-bar">
+                                    <span class="sr-only">45% Complete</span>
+                                </div>
+                            </div>
                         </a>
-                        <div class="media-body">
-                            <div class="media-status">
-                                <span class=" badge bg-warning">7</span>
-                            </div>
-                            <strong>Mr Tasi</strong>
-                            <small>Dream Land, USA</small>
-                        </div>
-                    </div>
-                    <!-- media -->
-                </li>
-            </ul>
-            <h5 class="side-title">pending Task</h5>
-            <ul class="p-task tasks-bar">
-                <li>
-                    <a href="#">
-                        <div class="task-info">
-                            <div class="desc">Dashboard v1.3</div>
-                            <div class="percent">40%</div>
-                        </div>
-                        <div class="progress progress-striped">
-                            <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" class="progress-bar progress-bar-success">
-                                <span class="sr-only">40% Complete (success)</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="task-info">
-                            <div class="desc">Database Update</div>
-                            <div class="percent">60%</div>
-                        </div>
-                        <div class="progress progress-striped">
-                            <div style="width: 60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar progress-bar-warning">
-                                <span class="sr-only">60% Complete (warning)</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="task-info">
-                            <div class="desc">Iphone Development</div>
-                            <div class="percent">87%</div>
-                        </div>
-                        <div class="progress progress-striped">
-                            <div style="width: 87%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="20" role="progressbar" class="progress-bar progress-bar-info">
-                                <span class="sr-only">87% Complete</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="task-info">
-                            <div class="desc">Mobile App</div>
-                            <div class="percent">33%</div>
-                        </div>
-                        <div class="progress progress-striped">
-                            <div style="width: 33%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar progress-bar-danger">
-                                <span class="sr-only">33% Complete (danger)</span>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <div class="task-info">
-                            <div class="desc">Dashboard v1.3</div>
-                            <div class="percent">45%</div>
-                        </div>
-                        <div class="progress progress-striped active">
-                            <div style="width: 45%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="45" role="progressbar" class="progress-bar">
-                                <span class="sr-only">45% Complete</span>
-                            </div>
-                        </div>
-
-                    </a>
-                </li>
-                <li class="external">
-                    <a href="#">See All Tasks</a>
-                </li>
-            </ul>
-        </div>
-        <!-- Right Slidebar end -->
-
-        <!--footer start-->
-        <footer class="site-footer">
-            <div class="text-center">
-                2014 &copy; Lastteacher.com by THE CORE.
-                <a href="#" class="go-top">
-                    <i class="fa fa-angle-up"></i>
-                </a>
+                    </li>
+                    <li class="external">
+                        <a href="#">See All Tasks</a>
+                    </li>
+                </ul>
             </div>
-        </footer>
-        <!--footer end-->
-    </section>
-
-    <!-- js placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
-    <script src="js/jquery.scrollTo.min.js"></script>
-    <script src="js/slidebars.min.js"></script>
-    <script src="js/respond.min.js"></script>
-    <script src="assets/morris.js-0.4.3/morris.min.js" type="text/javascript"></script>
-    <script src="assets/morris.js-0.4.3/raphael-min.js" type="text/javascript"></script>
-    <script src="assets/flot/jquery.flot.js"></script>
-    <script src="assets/flot/jquery.flot.resize.js"></script>
-    <script src="assets/flot/jquery.flot.pie.js"></script>
-    <script src="assets/flot/jquery.flot.stack.js"></script>
-    <script src="assets/flot/jquery.flot.crosshair.js"></script>
-    <script src="assets/jquery-knob/js/jquery.knob.js"></script>
-
-    <!--common script for all pages-->
-    <script src="js/common-scripts.js"></script>
-
-    <script src="js/flot-chart.js"></script>
-
-    <!-- script for this page only-->
-    <script src="js/morris-script.js"></script>
-
-    <script>
-
-      //knob
-      $(".knob").knob();
-    
-    </script>
-
-
-</body>
-
+            <!-- Right Slidebar end -->
+            <!--footer start-->
+            <footer class="site-footer">
+                <div class="text-center">
+                    2014 &copy; Lastteacher.com by THE CORE.
+                    <a href="#" class="go-top">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+            </footer>
+            <!--footer end-->
+        </section>
+        <!-- js placed at the end of the document so the pages load faster -->
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script class="include" type="text/javascript" src="js/jquery.dcjqaccordion.2.7.js"></script>
+        <script src="js/jquery.scrollTo.min.js"></script>
+        <script src="js/slidebars.min.js"></script>
+        <script src="js/respond.min.js"></script>
+        <script src="assets/morris.js-0.4.3/morris.min.js" type="text/javascript"></script>
+        <script src="assets/morris.js-0.4.3/raphael-min.js" type="text/javascript"></script>
+        <script src="assets/flot/jquery.flot.js"></script>
+        <script src="assets/flot/jquery.flot.resize.js"></script>
+        <script src="assets/flot/jquery.flot.pie.js"></script>
+        <script src="assets/flot/jquery.flot.stack.js"></script>
+        <script src="assets/flot/jquery.flot.crosshair.js"></script>
+        <script src="assets/jquery-knob/js/jquery.knob.js"></script>
+        <script src="js/jquery.sparkline.js" type="text/javascript"></script>
+        <!--common script for all pages-->
+        <script src="js/common-scripts.js"></script>
+        <script src="js/flot-chart.js"></script>
+        <!-- script for this page only-->
+        <script src="js/morris-script.js"></script>
+        <script src="js/sparkline-chart.js"></script>
+        <script>
+        //knob
+        $(".knob").knob();
+        
+        </script>
+    </body>
 </html>

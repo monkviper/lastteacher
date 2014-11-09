@@ -2383,12 +2383,12 @@ ul.inbox-pagination li {
     border-radius: 0;
     -webkit-border-radius: 0;
     color: #89817f;
-    border-left: 5px solid #fff;
+    cursor: default;
 }
 
 .profile-nav ul > li > a:hover, .profile-nav ul > li > a:focus, .profile-nav ul li.active  a {
     background: #f8f7f5 !important;
-    border-left: 5px solid #ff766c;
+    border-left: 0px solid #ff766c!important;
     color: #89817f !important;
 }
 
@@ -3737,7 +3737,7 @@ table.sliders tr td {
     border-left: 5px solid #aec785;
 }
 
-.user-heading.alt a {
+.user-heading.alt a.user-border {
     float: left;
     margin-right: 15px;
     margin-left: -10px;
@@ -3745,6 +3745,10 @@ table.sliders tr td {
     border: 5px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     -webkit-border-radius: 50%;
+}
+.user-heading.alt a {
+    color: white;
+    text-decoration: underline;
 }
 .user-heading.alt a img{
     width: 100px;
@@ -4306,7 +4310,7 @@ td.details table tr td, .dataTable tr:last-child {
 }
 
 .adv-table .dataTables_info, .dataTables_paginate {
-    padding: 15px 0;
+    padding: 8px 0;
 }
 
 .adv-table .dataTables_length,.adv-table .dataTables_filter {
@@ -4363,9 +4367,7 @@ tr.odd.gradeX td.sorting_1, tr.even.gradeX td.sorting_1, table.display tr.even.g
 
 
 .full-width .nav > li > a:hover, .full-width .nav  li.active a, .full-width .nav li.dropdown a:hover , .full-width .nav li.dropdown.open a:focus, .full-width .nav .open > a, .full-width  .nav .open > a:hover, .full-width  .nav .open > a:focus{
-    background-color: #F77B6F;
     text-decoration: none;
-    color: #fff;
     transition: all 0.3s ease 0s;
     -webkit-transition: all 0.3s ease 0s;
 }
@@ -5726,4 +5728,40 @@ a.guest-on i {
     border: none;
 }
 
+.state-overview .value h1{
+    color: #c1c4d0;
+}
+.panel>.list-group .list-group-item{
+    overflow: hidden;
+}
+.your-recent-exam{
 
+}
+.your-recent-exam .badge{
+    margin-top: 10px;
+}
+
+.your-recent-exam .btn{
+   margin-top: 30px;
+   letter-spacing: 1px;
+}
+
+.table.subject-reports td.around-inner-table{
+    border: 1px solid #ddd;
+}
+
+.recent-exam-full-details table th {
+    color: black;
+}
+
+.panel-heading h4{
+    color: black;
+}
+
+.navbar-nav >li.active > a{
+    background: #eeeeee;
+    color: black;
+}
+.panel-heading{
+    overflow: hidden;
+}

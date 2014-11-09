@@ -45,7 +45,6 @@ define( 'AUTOSAVE_INTERVAL', '86400' );
 
 /* Updates */
 define( 'WP_AUTO_UPDATE_CORE', false );
-define( 'DISALLOW_FILE_MODS', true );
 define( 'DISALLOW_FILE_EDIT', true );
 
 /* Default Theme */

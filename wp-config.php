@@ -22,9 +22,8 @@ if ( !defined('ABSPATH') )
 
 /** Sets up the Wordpress installation specific config. */
 require_once(ABSPATH . 'config' . DIRECTORY_SEPARATOR . 'default.php');
-require_once(ABSPATH . 'config' . DIRECTORY_SEPARATOR . 'environment.php');
-require_once(ABSPATH . 'config' . DIRECTORY_SEPARATOR . LT_ENVIRONMENT . '.php');
 require_once(ABSPATH . 'config' . DIRECTORY_SEPARATOR . 'local.php');
+require_once(ABSPATH . 'config' . DIRECTORY_SEPARATOR . LT_ENVIRONMENT . '.php');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

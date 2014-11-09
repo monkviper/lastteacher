@@ -15,3 +15,6 @@ define( 'SAVEQUERIES', false );
 
 /* Disable Automatic Updater */
 define( 'AUTOMATIC_UPDATER_DISABLED', true );
+
+/* New Plugins and Themes install */
+define( 'DISALLOW_FILE_MODS', true );

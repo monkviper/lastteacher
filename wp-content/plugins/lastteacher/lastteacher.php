@@ -8,4 +8,4 @@ Version: 1.0
 Author URI: http://plusya.com/mridul89
 */
 
-
+add_filter('pre_option_WPLANG', '__return_empty_string');

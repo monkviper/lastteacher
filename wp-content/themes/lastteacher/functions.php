@@ -37,3 +37,5 @@ function lt_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'lt_scripts' );
 
+/** Include the file to make some wordpress tweaks */
+require_once LT_INC_DIR . '/wp-tweaks.php';

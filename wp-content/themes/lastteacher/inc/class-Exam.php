@@ -125,7 +125,9 @@ class LT_Exam {
 			if( $exist ) {
 				return $wpdb->update( $tablename, $newdata, $where, $format, $where_format );
 			} else {
-				$newdata['ID'] = $this->ID;
+				$newdata = array_merge( array( 'ID' => $this->ID ), $newdata );
+				array_unshift( $format, '%d' );
+
 				return $wpdb->insert( $tablename, $newdata, $format );
 			}
 		} else { // new record

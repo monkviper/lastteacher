@@ -33,6 +33,13 @@ function lt_setup() {
 		/** Include the metaboxes to display on the admin side */
 		require_once LT_INC_DIR . '/metaboxes.php';
 	}
+
+	if(LT_VERSION !== get_option('lt_version')) {
+		/** Updating the database for our theme, this should be done asap to prevent any problems */
+		require_once LT_INC_DIR . '/db-setup.php';
+
+		update_option('lt_version', LT_VERSION);
+	}
 }
 
 add_action( 'after_setup_theme', 'lt_setup' );

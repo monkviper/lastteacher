@@ -53,3 +53,9 @@ require_once LT_INC_DIR . '/wp-tweaks.php';
 
 /** Include the class that holds the exams */
 require_once LT_INC_DIR . '/class-Exam.php';
+
+// These files are only required in admin side
+if( LT_ADMIN ) {
+	/** Include the class that holds the exams */
+	require_once LT_INC_DIR . '/metaboxes.php';
+}

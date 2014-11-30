@@ -10,8 +10,8 @@ define( 'LT_INC_DIR', LT_THEME_DIR . '/inc' );
 define( 'LT_JS_DIR', LT_THEME_DIR . '/js' );
 
 /* Last Teacher Context based constants */
-define( 'LT_ADMIN', defined( 'WP_ADMIN' ) && WP_ADMIN && !( defined( 'DOING_AJAX' ) && DOING_AJAX ) );
-define( 'LT_FRONT', !( defined( 'WP_ADMIN' ) && WP_ADMIN ) );
+define( 'LT_ADMIN', is_admin() && !( defined( 'DOING_AJAX' ) && DOING_AJAX ) );
+define( 'LT_FRONT', !is_admin() );
 define( 'LT_AJAX', defined( 'DOING_AJAX' ) && DOING_AJAX );
 
 /**

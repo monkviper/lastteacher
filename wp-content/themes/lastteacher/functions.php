@@ -37,6 +37,9 @@ function lt_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'lt_scripts' );
 
+/** Include the external plugins and extensions */
+require_once LT_EXT_DIR . '/main.php';
+
 /** Include the file to hook the main modifications */
 require_once LT_INC_DIR . '/main.php';
 
@@ -45,6 +48,3 @@ require_once LT_INC_DIR . '/wp-tweaks.php';
 
 /** Include the class that holds the exams */
 require_once LT_INC_DIR . '/class-Exam.php';
-
-/** Include the external plugins and extensions */
-require_once LT_EXT_DIR . '/main.php';

@@ -26,7 +26,7 @@ $sql = "CREATE TABLE $table_name (
   total_questions int(5) UNSIGNED NOT NULL,
   correct_answer_marks int(5) UNSIGNED NOT NULL,
   wrong_answer_marks int(5) UNSIGNED NOT NULL,
-  pass_marks int(5) UNSIGNED NOT NULL,
+  pass_marks int(5) NOT NULL,
   questions text NOT NULL,
   PRIMARY KEY  (ID)
 ) $charset_collate;";

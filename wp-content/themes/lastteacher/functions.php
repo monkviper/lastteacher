@@ -43,5 +43,8 @@ require_once LT_INC_DIR . '/main.php';
 /** Include the file to make some wordpress tweaks */
 require_once LT_INC_DIR . '/wp-tweaks.php';
 
+/** Include the class that holds the exams */
+require_once LT_INC_DIR . '/class-Exam.php';
+
 /** Include the external plugins and extensions */
 require_once LT_EXT_DIR . '/main.php';

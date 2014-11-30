@@ -68,6 +68,24 @@ class LT_Exam {
 	 */
 	private $author;
 	/**
+	 * The time at which exam was started
+	 *
+	 * @var int
+	 */
+	private $time_started;
+	/**
+	 * The time at which exam was ended
+	 *
+	 * @var int
+	 */
+	private $time_ended;
+	/**
+	 * The user who wrote this exam
+	 *
+	 * @var WP_User
+	 */
+	private $user;
+	/**
 	 * An array of all the questions for this exam
 	 *
 	 * @var array

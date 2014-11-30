@@ -29,6 +29,10 @@ if( !isset( $content_width ) ) {
  * as indicating support for post thumbnails.
  */
 function lt_setup() {
+	if( LT_ADMIN && LT_ENVIRONMENT_DEV !== LT_ENVIRONMENT ) {
+		/** Include the metaboxes to display on the admin side */
+		require_once LT_INC_DIR . '/metaboxes.php';
+	}
 }
 
 add_action( 'after_setup_theme', 'lt_setup' );
@@ -54,8 +58,3 @@ require_once LT_INC_DIR . '/wp-tweaks.php';
 /** Include the class that holds the exams */
 require_once LT_INC_DIR . '/class-Exam.php';
 
-// These files are only required in admin side
-if( LT_ADMIN ) {
-	/** Include the class that holds the exams */
-	require_once LT_INC_DIR . '/metaboxes.php';
-}

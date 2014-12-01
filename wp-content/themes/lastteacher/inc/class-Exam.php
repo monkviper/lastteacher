@@ -99,6 +99,7 @@ class LT_Exam {
 			$this->pass_marks = $row->pass_marks;
 			$this->correct_answer_marks = $row->correct_answer_marks;
 			$this->wrong_answer_marks = $row->wrong_answer_marks;
+			$this->questions = maybe_unserialize( $row->questions );
 			$this->total_marks = $this->total_questions * $this->correct_answer_marks;
 		}
 	}
@@ -115,6 +116,7 @@ class LT_Exam {
 					'pass_marks'           => $this->pass_marks,
 					'correct_answer_marks' => $this->correct_answer_marks,
 					'wrong_answer_marks'   => $this->wrong_answer_marks,
+					'questions'            => maybe_serialize( $this->questions ),
 			);
 			$format = array( '%s', '%d', '%d', '%d', '%d' );
 			$where = array( 'ID' => $this->ID );

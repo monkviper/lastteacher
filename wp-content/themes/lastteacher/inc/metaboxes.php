@@ -2,13 +2,101 @@
 
 if( function_exists( "register_field_group" ) ) {
 	register_field_group( array(
+					'id'         => 'acf_info',
+					'title'      => 'Info',
+					'fields'     => array(
+							array(
+									'key'           => 'field_547b86dec33f3',
+									'label'         => 'Exam Name',
+									'name'          => 'exam_name',
+									'type'          => 'text',
+									'default_value' => '',
+									'placeholder'   => '',
+									'prepend'       => '',
+									'append'        => '',
+									'formatting'    => 'none',
+									'maxlength'     => '',
+							),
+							array(
+									'key'           => 'field_547b86f9c33f4',
+									'label'         => 'Total Questions',
+									'name'          => 'total_questions',
+									'type'          => 'number',
+									'default_value' => '',
+									'placeholder'   => '',
+									'prepend'       => '',
+									'append'        => '',
+									'min'           => '',
+									'max'           => '',
+									'step'          => '',
+							),
+							array(
+									'key'           => 'field_547b8728c33f5',
+									'label'         => 'Correct Answer Marks',
+									'name'          => 'correct_answer_marks',
+									'type'          => 'number',
+									'default_value' => '',
+									'placeholder'   => '',
+									'prepend'       => '',
+									'append'        => '',
+									'min'           => '',
+									'max'           => '',
+									'step'          => '',
+							),
+							array(
+									'key'           => 'field_547b8743c33f6',
+									'label'         => 'Wrong Answer Marks',
+									'name'          => 'wrong_answer_marks',
+									'type'          => 'number',
+									'default_value' => '',
+									'placeholder'   => '',
+									'prepend'       => '',
+									'append'        => '',
+									'min'           => '',
+									'max'           => '',
+									'step'          => '',
+							),
+							array(
+									'key'           => 'field_547b8751c33f7',
+									'label'         => 'Passing Marks',
+									'name'          => 'passing_marks',
+									'type'          => 'number',
+									'default_value' => '',
+									'placeholder'   => '',
+									'prepend'       => '',
+									'append'        => '',
+									'min'           => '',
+									'max'           => '',
+									'step'          => '',
+							),
+					),
+					'location'   => array(
+							array(
+									array(
+											'param'    => 'post_type',
+											'operator' => '==',
+											'value'    => 'exam',
+											'order_no' => 0,
+											'group_no' => 0,
+									),
+							),
+					),
+					'options'    => array(
+							'position'       => 'side',
+							'layout'         => 'no_box',
+							'hide_on_screen' => array(),
+					),
+					'menu_order' => 0,
+			)
+	);
+	register_field_group( array(
 					'id'         => 'acf_questions',
 					'title'      => 'Questions',
 					'fields'     => array(
 							array(
 									'key'          => 'field_547b3b3e73dd6',
-									'label'        => 'Question',
-									'name'         => 'question',
+									'label'        => 'Questions',
+									'name'         => 'questions',
 									'type'         => 'repeater',
 									'sub_fields'   => array(
 											array(
@@ -48,7 +136,7 @@ if( function_exists( "register_field_group" ) ) {
 													'row_min'      => 2,
 													'row_limit'    => 5,
 													'layout'       => 'table',
-													'button_label' => 'Add Option',
+													'button_label' => 'Add Row',
 											),
 											array(
 													'key'           => 'field_547b3c3873dda',

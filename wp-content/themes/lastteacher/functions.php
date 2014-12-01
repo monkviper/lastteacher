@@ -34,6 +34,9 @@ function lt_setup() {
 		require_once LT_INC_DIR . '/metaboxes.php';
 	}
 
+	/** Loading the other admin hooks, these need to run on ajax too */
+	require_once LT_INC_DIR . '/admin.php';
+
 	if(LT_VERSION !== get_option('lt_version')) {
 		/** Updating the database for our theme, this should be done asap to prevent any problems */
 		require_once LT_INC_DIR . '/db-setup.php';

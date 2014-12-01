@@ -113,7 +113,7 @@ class LT_admin {
 					if(is_null($save)) {
 						$save = $exam->questions[$index];
 					} else {
-						$save = $save[$index];
+						$save = isset( $save[$index] ) ? $save[$index] : $save;
 					}
 				}
 

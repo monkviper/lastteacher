@@ -10,9 +10,3 @@ require_once LT_EXT_DIR . '/acf-flexible-content/acf-flexible-content.php';
 require_once LT_EXT_DIR . '/acf-repeater/acf-repeater.php';
 require_once LT_EXT_DIR . '/acf-wordpress-wysiwyg-field-master/acf-wp_wysiwyg.php';
 
-// Load Libraries installed through composer
-require_once LT_EXT_DIR . '/vendor/autoload.php';
-
-// Load the CMB2 plugin
-require_once LT_EXT_DIR . '/cmb2/init.php';
-

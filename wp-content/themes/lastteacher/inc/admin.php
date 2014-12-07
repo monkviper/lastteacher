@@ -78,7 +78,6 @@ class LT_admin {
 	}
 
 	function load( $value, $post_id, $f ) {
-		$orig_value = $value;
 		if( in_array( get_post_type( $post_id ), array( 'question', 'subject' ), true ) ) {
 			$obj = $this->get_obj( $post_id );
 
@@ -133,7 +132,7 @@ class LT_admin {
 			}
 		}
 
-		return $orig_value;
+		return $value;
 	}
 
 	/**

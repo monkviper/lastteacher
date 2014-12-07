@@ -1,7 +1,7 @@
 <?php
 
 /* Last Teacher Theme Version */
-define( 'LT_VERSION', '1.0' );
+define( 'LT_VERSION', '0.1' );
 
 /* Last Teacher Theme Directory Paths */
 define( 'LT_THEME_DIR', get_template_directory() );
@@ -66,5 +66,5 @@ require_once LT_INC_DIR . '/main.php';
 require_once LT_INC_DIR . '/wp-tweaks.php';
 
 /** Include the class that holds the exams */
-require_once LT_INC_DIR . '/class-Exam.php';
+require_once LT_INC_DIR . '/classes.php';
 

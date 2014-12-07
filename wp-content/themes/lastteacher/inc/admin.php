@@ -11,134 +11,158 @@ class LT_admin {
 	}
 
 	function save_post( $post_id ) {
-		if( 'exam' !== get_post_type( $post_id ) ) {
-			acf()->save_post( $post_id );
-		}
-
-		// load from post
-		if( !isset( $_POST['fields'] ) ) {
-			return $post_id;
+		if( !in_array( get_post_type( $post_id ), array( 'question', 'subject' ), true ) ) {
+			return acf()->save_post( $post_id );
 		}
 
 		// loop through and save
-		if( !empty( $_POST['fields'] ) ) {
-			$exam = $this->get_exam( $post_id );
-
-			if( $exam ) {
+		if( isset( $_POST['fields'] ) && !empty( $_POST['fields'] ) ) {
+			$obj = $this->get_obj( $post_id );
+			if( $obj ) {
 				foreach( $_POST['fields'] as $k => $v ) {
 					$f = apply_filters( 'acf/load_field', false, $k );
 
-					switch( $f['name'] ) {
-						case 'exam_name':
-							$exam->name = $v;
-							break;
-						case 'total_questions':
-							$exam->total_questions = $v;
-							break;
-						case 'correct_answer_marks':
-							$exam->correct_answer_marks = $v;
-							break;
-						case 'wrong_answer_marks':
-							$exam->wrong_answer_marks = $v;
-							break;
-						case 'passing_marks':
-							$exam->pass_marks = $v;
-							break;
-						case 'questions':
-							$exam->questions = array();
-							unset( $v['acfcloneindex'] );
-							foreach( $v as $row ) {
-								$ret = array();
-								foreach( $f['sub_fields'] as $sub_field ) {
-									$value = isset( $row[$sub_field['key']] ) ? $row[$sub_field['key']] : false;
-									if( 'options' === $sub_field['name'] ) {
-										$sret = array();
-										unset( $value['acfcloneindex'] );
-										foreach( $value as $srow ) {
-											foreach( $sub_field['sub_fields'] as $ssub_field ) {
-												$svalue = isset( $srow[$ssub_field['key']] ) ? $srow[$ssub_field['key']] : false;
-												$sret[] = $svalue;
-											}
-										}
-										$value = $sret;
-									}
-									$ret[$sub_field['name']] = $value;
+					if( 'question' === get_post_type( $post_id ) ) {
+						switch( $f['name'] ) {
+							case 'question_text':
+								$obj->setQuestionText( $v );
+								break;
+							case 'options':
+								unset( $v['acfcloneindex'] );
+								$save = array();
+								foreach( $v as $option ) {
+									$save[] = reset( $option );
 								}
-								$exam->questions[] = $ret;
-							}
-							break;
+								$obj->setOptions( $save );
+								break;
+							case 'answer':
+								$obj->setAnswer( $v );
+								break;
+							case 'subject':
+								$obj->setSubject( $this->get_obj( $v ) );
+								break;
+							case 'subcategory':
+								$obj->setSubcategory( $v );
+								break;
+						}
+					} elseif( 'subject' === get_post_type( $post_id ) ) {
+						switch( $f['name'] ) {
+							case 'name':
+								$obj->setName( $v );
+								break;
+							case 'total_questions':
+								$obj->setTotalQuestions( $v );
+								break;
+							case 'marks_per_question':
+								$obj->setMarksPerQuestion( $v );
+								break;
+							case 'negative_marks':
+								$obj->setNegativeMarks( $v );
+								break;
+							case 'cut_off':
+								$obj->setCutOff( $v );
+								break;
+							case 'time_limit':
+								$obj->setTimeLimit( $v );
+								break;
+						}
 					}
 				}
-			}
 
-			$exam->save();
+				$obj->save();
+				update_post_meta( $post_id, '_saved_ext_id', $obj->id );
+			}
 		}
 
 		return $post_id;
 	}
 
-	function load( $value, $post_id, $field ) {
-		$exam = $this->get_exam( $post_id );
+	function load( $value, $post_id, $f ) {
+		$orig_value = $value;
+		if( in_array( get_post_type( $post_id ), array( 'question', 'subject' ), true ) ) {
+			$obj = $this->get_obj( $post_id );
 
-		if( $exam ) {
-			switch( $field['name'] ) {
-				case 'exam_name':
-					$value = $exam->name;
-					break;
-				case 'total_questions':
-					$value = $exam->total_questions;
-					break;
-				case 'correct_answer_marks':
-					$value = $exam->correct_answer_marks;
-					break;
-				case 'wrong_answer_marks':
-					$value = $exam->wrong_answer_marks;
-					break;
-				case 'passing_marks':
-					$value = $exam->pass_marks;
-					break;
-				case 'questions':
-					$value = count($exam->questions);
-					break;
-			}
+			if( $obj && $obj->exists() ) {
+				if( 'question' === get_post_type( $post_id ) ) {
+					switch( $f['name'] ) {
+						case 'question_text':
+							$value = $obj->getQuestionText();
+							break;
+						case 'options':
+							$value = $obj->getOptionsCount();
+							break;
+						case 'answer':
+							$value = $obj->getAnswer();
+							break;
+						case 'subject':
+							$value = $obj->getSubject()->id;
+							break;
+						case 'subcategory':
+							$value = $obj->getSubcategory();
+							break;
+					}
 
-			if(0 === strpos($field['name'], 'questions_')) {
-				$path = explode('_', $field['name']);
-				if(5 === count($path)) {
-					array_pop($path);
-				}
-				array_shift($path);
-				$save = null;
-				foreach($path as $index) {
-					if(is_null($save)) {
-						$save = $exam->questions[$index];
-					} else {
-						$save = isset( $save[$index] ) ? $save[$index] : $save;
+					if( 0 === strpos( $f['name'], 'options_' ) ) {
+						$path = substr( $f['name'], 8 );
+						$options = $obj->getOptions();
+						$index = intval( $path );
+						$value = $options[$index];
+					}
+				} elseif( 'subject' === get_post_type( $post_id ) ) {
+					switch( $f['name'] ) {
+						case 'name':
+							$value = $obj->getName();
+							break;
+						case 'total_questions':
+							$value = $obj->getTotalQuestions();
+							break;
+						case 'marks_per_question':
+							$value = $obj->getMarksPerQuestion();
+							break;
+						case 'negative_marks':
+							$value = $obj->getNegativeMarks();
+							break;
+						case 'cut_off':
+							$value = $obj->getCutOff();
+							break;
+						case 'time_limit':
+							$value = $obj->getTimeLimit();
+							break;
 					}
 				}
-
-				if( 'repeater' === $field['type'] ) {
-					$save = count( $save );
-				}
-
-				$value = $save;
 			}
 		}
 
-		return $value;
+		return $orig_value;
 	}
 
 	/**
 	 * @param $post_id
 	 *
-	 * @return LT_Exam
+	 * @return LT_Question|LT_Subject
 	 */
-	function get_exam( $post_id ) {
-		if( is_numeric( $post_id ) && !isset( $this->cache[$post_id] ) ) {
-			$this->cache[$post_id] = new LT_Exam( $post_id );
+	function get_obj( $post_id ) {
+		$post_type = get_post_type( $post_id );
+		$post_id = get_post_meta( $post_id, '_saved_ext_id', true );
+		if( !$post_id ) {
+			if( 'question' === $post_type ) {
+				return new LT_Question();
+			} elseif( 'subject' === $post_type ) {
+				return new LT_Subject();
+			}
+		} elseif( is_numeric( $post_id ) && !isset( $this->cache[$post_type][$post_id] ) ) {
+			if( !isset( $this->cache[$post_type] ) ) {
+				$this->cache[$post_type] = array();
+			}
+
+			if( 'question' === $post_type ) {
+				$this->cache[$post_type][$post_id] = new LT_Question( $post_id );
+			} elseif( 'subject' === $post_type ) {
+				$this->cache[$post_type][$post_id] = new LT_Subject( $post_id );
+			}
 		}
 
-		return isset( $this->cache[$post_id] ) ? $this->cache[$post_id] : null;
+		return isset( $this->cache[$post_type][$post_id] ) ? $this->cache[$post_type][$post_id] : null;
 	}
 }
 

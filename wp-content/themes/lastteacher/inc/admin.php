@@ -94,7 +94,14 @@ class LT_admin {
 							$value = $obj->getAnswer();
 							break;
 						case 'subject':
-							$value = $obj->getSubject()->id;
+							$posts = get_posts( array(
+											'meta_key'   => '_saved_ext_id',
+											'meta_value' => $obj->getSubject()->id,
+											'post_type'  => 'subject',
+											'fields'     => 'ids'
+									)
+							);
+							$value = reset($posts);
 							break;
 						case 'subcategory':
 							$value = $obj->getSubcategory();

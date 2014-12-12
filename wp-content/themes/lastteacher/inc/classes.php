@@ -13,7 +13,7 @@ abstract class LT_MODEL {
 	}
 
 	function exists() {
-		return isset( $this->id ) ? boolval( intval( $this->id ) ) : false;
+		return isset( $this->id ) ? ( (bool) intval( $this->id ) ) : false;
 	}
 
 	function load() {

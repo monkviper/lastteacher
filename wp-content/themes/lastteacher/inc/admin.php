@@ -51,14 +51,14 @@ class LT_admin {
 					return $found.first(); // Return first match of the collection
 				};
 
-				var process = function(subject_tr) {
-					var val = $(subject_tr).find('select').val();
+				var process = function() {
+					var val = $(this).find('select').val();
 					if(!val)
-						val = $(subject_tr).find('select option:not([disabled])').first().attr('value');
+						val = $(this).find('select option:not([disabled])').first().attr('value');
 
 					var allowed = ids[val];
 
-					var select = $(subject_tr).next().find('select');
+					var select = $(this).next().find('select');
 
 					select.children().each(function() {
 						if(-1 == $.inArray($(this).attr('value'), allowed))
@@ -78,14 +78,12 @@ class LT_admin {
 					// on first load, this is the $('#poststuff')
 					// on adding a repeater row, this is the tr
 
-					if(div.is('#poststuff'))
-						$(div).find('#acf-subjects').closest_descendent('table').find('tr.row').find('[data-field_name="subject"]').each(function() {
-							process(this);
-						}).on('change', function() {
-							process(this);
-						});
-					else
-						process(div);
+					if(div.is('#poststuff')) {
+						$(div).find('#acf-subjects').closest_descendent('table').find('tr.row').find('[data-field_name="subject"]').each(process).on('change', process);
+					} else {
+						process.call(div);
+						div.on('change', process);
+					}
 				});
 			})();
 		</script>

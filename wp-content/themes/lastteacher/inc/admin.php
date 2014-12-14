@@ -5,9 +5,91 @@ class LT_admin {
 	private $cache = array();
 
 	function __construct() {
+		add_action( 'acf/input/admin_head', array( $this, 'acf_mocks_scripts' ) );
 		remove_action( 'acf/save_post', array( acf(), 'save_post' ), 10 );
 		add_action( 'acf/save_post', array( $this, 'save_post' ), 10 );
 		add_filter( 'acf/load_value', array( $this, 'load' ), 99, 3 );
+	}
+
+	function acf_mocks_scripts() {
+		global $wpdb;
+		$arr = array();
+
+		$query = new WP_Query( array(
+				'post_type'     => 'subject',
+				'fields'        => 'ids',
+				'post_per_page' => -1
+		) );
+		$subjects = $query->posts;
+
+		foreach( $subjects as $subject ) {
+			$query = new WP_Query( array(
+					'post_type'     => 'question',
+					'fields'        => 'ids',
+					'meta_key'      => '_saved_ext_id',
+					'meta_value'    => $wpdb->get_col( "SELECT ID FROM {$wpdb->prefix}questions WHERE subject = " . get_post_meta( $subject, '_saved_ext_id', true ) ),
+					'post_per_page' => -1
+			) );
+
+			$arr[$subject] = $query->posts;
+		}
+		?>
+		<script type="text/javascript">
+			(function() {
+				var ids = <?php echo json_encode($arr); ?>;
+				var $ = jQuery;
+
+				$.fn.closest_descendent = function(filter) {
+					var $found = $(),
+							$currentSet = this; // Current place
+					while($currentSet.length) {
+						$found = $currentSet.filter(filter);
+						if($found.length) break;  // At least one match: break loop
+						// Get all children of the current set
+						$currentSet = $currentSet.children();
+					}
+					return $found.first(); // Return first match of the collection
+				};
+
+				var process = function(subject_tr) {
+					var val = $(subject_tr).find('select').val();
+					if(!val)
+						val = $(subject_tr).find('select option:not([disabled])').first().attr('value');
+
+					var allowed = ids[val];
+
+					var select = $(subject_tr).next().find('select');
+
+					select.children().each(function() {
+						if(-1 == $.inArray($(this).attr('value'), allowed))
+							$(this).hide().prop('disabled', true);
+						else
+							$(this).show().prop('disabled', false);
+					});
+
+					val = select.val();
+
+					if(!val)
+						select.find('option:not([disabled])').first().attr("selected", "selected");
+				};
+
+				$(document).live('acf/setup_fields', function(e, div) {
+					// div is the element with new html.
+					// on first load, this is the $('#poststuff')
+					// on adding a repeater row, this is the tr
+
+					if(div.is('#poststuff'))
+						$(div).find('#acf-subjects').closest_descendent('table').find('tr.row').find('[data-field_name="subject"]').each(function() {
+							process(this);
+						}).on('change', function() {
+							process(this);
+						});
+					else
+						process(div);
+				});
+			})();
+		</script>
+	<?php
 	}
 
 	function save_post( $post_id ) {
@@ -101,7 +183,7 @@ class LT_admin {
 											'fields'     => 'ids'
 									)
 							);
-							$value = reset($posts);
+							$value = reset( $posts );
 							break;
 						case 'subcategory':
 							$value = $obj->getSubcategory();

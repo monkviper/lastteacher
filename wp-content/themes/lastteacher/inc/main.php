@@ -180,7 +180,7 @@ class LAST_TEACHER {
 				'publicly_queryable'  => true,
 				'capability_type'     => 'post',
 		);
-		register_post_type( 'mock', $args );
+		register_post_type( 'exam', $args );
 	}
 }
 

@@ -5,7 +5,11 @@ abstract class LT_MODEL {
 	protected $_table;
 	public $id;
 
+	abstract protected function _setTable();
+
 	function __construct( $id = null ) {
+		$this->_setTable();
+
 		if( $id ) {
 			$this->id = $id;
 			$this->load();
@@ -57,11 +61,10 @@ class LT_Question extends LT_MODEL {
 	public $subject;
 	public $subcategory;
 
-	function __construct( $id = null ) {
+	protected function _setTable() {
 		global $wpdb;
 
 		$this->_table = $wpdb->prefix . 'questions';
-		parent::__construct( $id );
 	}
 
 	/**
@@ -196,11 +199,10 @@ class LT_Subject extends LT_MODEL {
 	public $cut_off;
 	public $time_limit;
 
-	function __construct( $id = null ) {
+	protected function _setTable() {
 		global $wpdb;
 
 		$this->_table = $wpdb->prefix . 'subjects';
-		parent::__construct( $id );
 	}
 
 	/**
@@ -332,10 +334,37 @@ class LT_Subject extends LT_MODEL {
 
 class LT_Mock extends LT_Subject {
 
-	function __construct( $id = null ) {
+	public $subjects_questions;
+
+	/**
+	 * @param array $subjects_questions
+	 */
+	public function setSubjectsQuestions( $subjects_questions ) {
+		$this->subjects_questions = $subjects_questions;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getSubjectsQuestions() {
+		return $this->subjects_questions;
+	}
+
+	protected function _setTable() {
 		global $wpdb;
 
 		$this->_table = $wpdb->prefix . 'mocks';
-		parent::__construct( $id );
+	}
+
+	protected function _populate( $row ) {
+		parent::_populate( $row );
+		$this->setSubjectsQuestions( maybe_unserialize( $row['subjects_questions'] ) );
+	}
+
+	protected function _getData() {
+		$ret = parent::_getData();
+		$ret['subjects_questions'] = maybe_serialize( $this->getSubjectsQuestions() );
+
+		return $ret;
 	}
 }

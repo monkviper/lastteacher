@@ -78,11 +78,14 @@ class LT_admin {
 					// on first load, this is the $('#poststuff')
 					// on adding a repeater row, this is the tr
 
-					if(div.is('#poststuff')) {
+					if($(div).is('#poststuff')) {
 						$(div).find('#acf-subjects').closest_descendent('table').find('tr.row').find('[data-field_name="subject"]').each(process).on('change', process);
 					} else {
-						process.call(div);
-						div.on('change', process);
+						var new_row = $(div).find('[data-field_name="subject"]');
+						if(new_row.length) {
+							process.call(new_row);
+							new_row.on('change', process);
+						}
 					}
 				});
 			})();
@@ -91,7 +94,7 @@ class LT_admin {
 	}
 
 	function save_post( $post_id ) {
-		if( !in_array( get_post_type( $post_id ), array( 'question', 'subject' ), true ) ) {
+		if( !in_array( get_post_type( $post_id ), array( 'question', 'subject', 'mock' ), true ) ) {
 			return acf()->save_post( $post_id );
 		}
 
@@ -125,7 +128,7 @@ class LT_admin {
 								$obj->setSubcategory( $v );
 								break;
 						}
-					} elseif( 'subject' === get_post_type( $post_id ) ) {
+					} elseif( 'subject' === get_post_type( $post_id ) || 'mock' === get_post_type( $post_id ) ) {
 						switch( $f['name'] ) {
 							case 'name':
 								$obj->setName( $v );
@@ -146,6 +149,31 @@ class LT_admin {
 								$obj->setTimeLimit( $v );
 								break;
 						}
+
+						if( 'mock' === get_post_type( $post_id ) && 'subjects' === $f['name'] ) {
+							unset( $v['acfcloneindex'] );
+							$save = array();
+							foreach( $v as $subject ) {
+								$key = '';
+								$value = '';
+								foreach( $subject as $val ) {
+									if( is_array( $val ) ) {
+										unset( $val['acfcloneindex'] );
+										$s = array();
+										foreach( $val as $q ) {
+											$s[] = get_post_meta( reset( $q ), '_saved_ext_id', true );
+										}
+										$value = $s;
+									} else {
+										$key = get_post_meta( $val, '_saved_ext_id', true );
+									}
+								}
+								if( $key ) {
+									$save[$key] = $value;
+								}
+							}
+							$obj->setSubjectsQuestions( $save );
+						}
 					}
 				}
 
@@ -158,7 +186,7 @@ class LT_admin {
 	}
 
 	function load( $value, $post_id, $f ) {
-		if( in_array( get_post_type( $post_id ), array( 'question', 'subject' ), true ) ) {
+		if( in_array( get_post_type( $post_id ), array( 'question', 'subject', 'mock' ), true ) ) {
 			$obj = $this->get_obj( $post_id );
 
 			if( $obj && $obj->exists() ) {
@@ -194,7 +222,7 @@ class LT_admin {
 						$index = intval( $path );
 						$value = $options[$index];
 					}
-				} elseif( 'subject' === get_post_type( $post_id ) ) {
+				} elseif( 'subject' === get_post_type( $post_id ) || 'mock' === get_post_type( $post_id ) ) {
 					switch( $f['name'] ) {
 						case 'name':
 							$value = $obj->getName();
@@ -215,6 +243,55 @@ class LT_admin {
 							$value = $obj->getTimeLimit();
 							break;
 					}
+
+					if( 'mock' === get_post_type( $post_id ) ) {
+						$subjects_questions = $obj->getSubjectsQuestions();
+
+						if('subjects' === $f['name']) {
+							$value = count($subjects_questions);
+						} elseif( 0 === strpos( $f['name'], 'subjects_' ) ) {
+							$path = substr( $f['name'], 9 );
+							$path = explode('_', $path);
+
+							reset($subjects_questions);
+							$key = array_shift($path);
+							while(0 < $key) {
+								next($subjects_questions);
+								$key--;
+							}
+
+							$key = array_shift($path);
+							if('subject' === $key) {
+								$value = key($subjects_questions);
+
+								$query = new WP_Query( array(
+										'post_type'     => 'subject',
+										'fields'        => 'ids',
+										'meta_key'      => '_saved_ext_id',
+										'meta_value'    => $value,
+										'post_per_page' => 1
+								) );
+								$value = current($query->posts);
+							} elseif('questions' === $key) {
+								$value = count(current($subjects_questions));
+							}
+
+							if(!empty($path)) {
+								$key = array_shift($path);
+								$questions = current($subjects_questions);
+								$value = $questions[$key];
+
+								$query = new WP_Query( array(
+										'post_type'     => 'question',
+										'fields'        => 'ids',
+										'meta_key'      => '_saved_ext_id',
+										'meta_value'    => $value,
+										'post_per_page' => 1
+								) );
+								$value = current($query->posts);
+							}
+						}
+					}
 				}
 			}
 		}
@@ -225,7 +302,7 @@ class LT_admin {
 	/**
 	 * @param $post_id
 	 *
-	 * @return LT_Question|LT_Subject
+	 * @return LT_Question|LT_Subject|LT_Mock
 	 */
 	function get_obj( $post_id ) {
 		$post_type = get_post_type( $post_id );
@@ -235,6 +312,8 @@ class LT_admin {
 				return new LT_Question();
 			} elseif( 'subject' === $post_type ) {
 				return new LT_Subject();
+			} elseif( 'mock' === $post_type ) {
+				return new LT_Mock();
 			}
 		} elseif( is_numeric( $post_id ) && !isset( $this->cache[$post_type][$post_id] ) ) {
 			if( !isset( $this->cache[$post_type] ) ) {
@@ -245,6 +324,8 @@ class LT_admin {
 				$this->cache[$post_type][$post_id] = new LT_Question( $post_id );
 			} elseif( 'subject' === $post_type ) {
 				$this->cache[$post_type][$post_id] = new LT_Subject( $post_id );
+			} elseif( 'mock' === $post_type ) {
+				$this->cache[$post_type][$post_id] = new LT_Mock( $post_id );
 			}
 		}
 

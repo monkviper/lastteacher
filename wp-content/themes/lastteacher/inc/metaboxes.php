@@ -49,6 +49,184 @@ if(function_exists("register_field_group"))
 					'menu_order' => 0,
 			));
 	register_field_group(array (
+					'id' => 'acf_exams',
+					'title' => 'Exams',
+					'fields' => array (
+							array (
+									'key' => 'field_548e2e7ad05d1',
+									'label' => 'Cost',
+									'name' => 'cost',
+									'type' => 'number',
+									'instructions' => 'Enter the amount of money we charge for this course.',
+									'default_value' => '',
+									'placeholder' => '',
+									'prepend' => 'Rs.',
+									'append' => '/-',
+									'min' => 1,
+									'max' => '',
+									'step' => '0.01',
+							),
+							array (
+									'key' => 'field_548e2f12d05d2',
+									'label' => 'Validity',
+									'name' => 'validity',
+									'type' => 'number',
+									'instructions' => 'Time before the purchased course expires.',
+									'default_value' => '',
+									'placeholder' => '',
+									'prepend' => '',
+									'append' => 'days',
+									'min' => 1,
+									'max' => '',
+									'step' => 1,
+							),
+							array (
+									'key' => 'field_548e2f6ad05d3',
+									'label' => 'Exam Date',
+									'name' => 'exam_date',
+									'type' => 'date_picker',
+									'instructions' => 'Enter the date of the exam.',
+									'date_format' => 'yyyy-mm-dd',
+									'display_format' => 'dd/mm/yy',
+									'first_day' => 1,
+							),
+							array (
+									'key' => 'field_548e2e1bd05cf',
+									'label' => 'Mocks',
+									'name' => 'mocks',
+									'type' => 'repeater',
+									'instructions' => 'Select the mocks related to this exam (selecting the same mock multiple times will give users ability to attempt that mock again)',
+									'required' => 1,
+									'sub_fields' => array (
+											array (
+													'key' => 'field_548e2e31d05d0',
+													'label' => 'Mock',
+													'name' => 'mock',
+													'type' => 'post_object',
+													'instructions' => 'Select the mock here',
+													'required' => 1,
+													'column_width' => '',
+													'post_type' => array (
+															0 => 'mock',
+													),
+													'taxonomy' => array (
+															0 => 'all',
+													),
+													'allow_null' => 0,
+													'multiple' => 0,
+											),
+									),
+									'row_min' => '',
+									'row_limit' => '',
+									'layout' => 'table',
+									'button_label' => 'Add Row',
+							),
+					),
+					'location' => array (
+							array (
+									array (
+											'param' => 'post_type',
+											'operator' => '==',
+											'value' => 'exam',
+											'order_no' => 0,
+											'group_no' => 0,
+									),
+							),
+					),
+					'options' => array (
+							'position' => 'normal',
+							'layout' => 'no_box',
+							'hide_on_screen' => array (
+							),
+					),
+					'menu_order' => 0,
+			));
+	register_field_group(array (
+					'id' => 'acf_mocks',
+					'title' => 'Mocks',
+					'fields' => array (
+							array (
+									'key' => 'field_5484e2173d488',
+									'label' => 'Subjects',
+									'name' => 'subjects',
+									'type' => 'repeater',
+									'instructions' => 'Add subjects here',
+									'required' => 1,
+									'sub_fields' => array (
+											array (
+													'key' => 'field_5484e2c83d489',
+													'label' => 'Subject',
+													'name' => 'subject',
+													'type' => 'post_object',
+													'instructions' => 'choose a subject from the list',
+													'required' => 1,
+													'column_width' => '',
+													'post_type' => array (
+															0 => 'subject',
+													),
+													'taxonomy' => array (
+															0 => 'all',
+													),
+													'allow_null' => 0,
+													'multiple' => 0,
+											),
+											array (
+													'key' => 'field_5484e3433d48a',
+													'label' => 'Questions',
+													'name' => 'questions',
+													'type' => 'repeater',
+													'instructions' => 'Choose your questions here',
+													'required' => 1,
+													'column_width' => '',
+													'sub_fields' => array (
+															array (
+																	'key' => 'field_5484e3c33d48b',
+																	'label' => 'Question',
+																	'name' => 'question',
+																	'type' => 'post_object',
+																	'column_width' => '',
+																	'post_type' => array (
+																			0 => 'question',
+																	),
+																	'taxonomy' => array (
+																			0 => 'all',
+																	),
+																	'allow_null' => 0,
+																	'multiple' => 0,
+															),
+													),
+													'row_min' => 1,
+													'row_limit' => '',
+													'layout' => 'row',
+													'button_label' => 'Add Question',
+											),
+									),
+									'row_min' => 1,
+									'row_limit' => '',
+									'layout' => 'row',
+									'button_label' => 'Add Subject',
+							),
+					),
+					'location' => array (
+							array (
+									array (
+											'param' => 'post_type',
+											'operator' => '==',
+											'value' => 'mock',
+											'order_no' => 0,
+											'group_no' => 0,
+									),
+							),
+					),
+					'options' => array (
+							'position' => 'normal',
+							'layout' => 'no_box',
+							'hide_on_screen' => array (
+							),
+					),
+					'menu_order' => 0,
+			));
+	register_field_group(array (
 					'id' => 'acf_details',
 					'title' => 'Details',
 					'fields' => array (

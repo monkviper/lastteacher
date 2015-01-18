@@ -67,7 +67,9 @@
 				<div class="action" data-action="question-paper">Not used</div>
 			</div>
 			<div class="col2">
-				<div class="action" data-action="pause">Pause</div>
+				<div class="action" data-action="start">Start</div>
+				<div class="action" data-action="pause" style="display:none">Pause</div>
+				<div class="action" data-action="resume" style="display:none">Resume</div>
 			</div>
 			<div class="col3">
 				<div class="action" data-action="save">Save and Next</div>

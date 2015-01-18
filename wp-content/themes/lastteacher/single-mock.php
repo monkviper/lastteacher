@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+<div id="mock">
 	<div id="placeholder">
 		Please wait while we setup the test environment.
 	</div>
@@ -52,6 +53,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 
 <?php ob_start(); ?>
 	<script type="text/javascript">

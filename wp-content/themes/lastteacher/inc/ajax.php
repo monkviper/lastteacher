@@ -62,15 +62,10 @@ class LT_AJAX {
 		$all_questions = array();
 		foreach( $subjects_questions as $subject_id => $questions ) {
 			$subject = new LT_Subject( $subject_id );
-			$all_questions[] = array(
-					'id'         => $subject_id,
-					'name'       => $subject->getName() ? $subject->getName() : get_the_title( $subject->getWPId() ),
-					'time_limit' => $subject->getTimeLimit() ? $subject->getTimeLimit() : $mock->getTimeLimit(),
-					'questions'  => array()
-			);
+			$q = array();
 			foreach( $questions as $question_id ) {
 				$question = new LT_Question( $question_id );
-				$all_questions[$subject_id]['questions'][] = array(
+				$q[] = array(
 						'id'       => $question_id,
 						'question' => $question->getQuestionText(),
 						'answer'   => $question->getAnswer(),
@@ -78,6 +73,12 @@ class LT_AJAX {
 						'time'     => 0
 				);
 			}
+			$all_questions[] = array(
+					'id'         => $subject_id,
+					'name'       => $subject->getName() ? $subject->getName() : get_the_title( $subject->getWPId() ),
+					'time_limit' => $subject->getTimeLimit() ? $subject->getTimeLimit() : $mock->getTimeLimit(),
+					'questions'  => $q
+			);
 		}
 
 		$wpdb->insert( $table_name,

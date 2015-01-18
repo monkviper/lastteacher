@@ -9,7 +9,7 @@
 	</div>
 
 	<div id="unavailable" style="display:none">
-		This exam is currently running by you in another window. Multiple windows are not allowed.
+		This exam is currently unavailable. <span class="message"></span>
 		<button class="proceed" href="<?php echo home_url('/'); ?>">Go back to Homepage</button>
 	</div>
 

@@ -70,6 +70,7 @@ $sql = "CREATE TABLE $table_name (
   total_time_lapsed int(5) NOT NULL,
   subjectwise_time_lapsed text NOT NULL,
   questions text NOT NULL,
+  completed tinyint(1) NOT NULL,
   PRIMARY KEY  (ID)
 ) $charset_collate;";
 // questions is a serialized array of question id, answer, time taken on question, a flag if marked for review

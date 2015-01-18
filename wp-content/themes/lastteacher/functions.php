@@ -1,7 +1,7 @@
 <?php
 
 /* Last Teacher Theme Version */
-define( 'LT_VERSION', '0.1.2' );
+define( 'LT_VERSION', '0.1.3' );
 
 /* Last Teacher Theme Directory Paths */
 define( 'LT_THEME_DIR', get_template_directory() );

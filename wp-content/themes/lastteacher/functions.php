@@ -52,6 +52,9 @@ add_action( 'after_setup_theme', 'lt_setup' );
  */
 function lt_scripts() {
 	wp_enqueue_style( 'lt-style', get_stylesheet_uri() );
+	if( is_singular( 'mock' ) ) {
+		wp_enqueue_script( 'lt-mock', get_template_directory_uri() . '/js/mock.js', array( 'jquery' ), LT_VERSION, true );
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'lt_scripts' );

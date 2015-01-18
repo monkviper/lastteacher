@@ -61,14 +61,14 @@ $table_name = $wpdb->prefix . 'exams_records';
 
 $sql = "CREATE TABLE $table_name (
   ID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  mock bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  user bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  mock bigint(20) UNSIGNED NOT NULL,
+  user bigint(20) UNSIGNED NOT NULL,
   started_at DATETIME NOT NULL,
   last_checkpoint_at DATETIME NOT NULL,
   sql_started_at DATETIME NOT NULL,
   sql_last_checkpoint_at DATETIME NOT NULL,
   total_time_lapsed int(5) NOT NULL,
-  subjectwise_time_lapsed int(5) NOT NULL,
+  subjectwise_time_lapsed text NOT NULL,
   questions text NOT NULL,
   PRIMARY KEY  (ID)
 ) $charset_collate;";

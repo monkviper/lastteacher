@@ -4,9 +4,6 @@
 	var _ajax_nonce = lt_ajax_nonce;
 	var ajax = function(action, params, callback) {
 		params = params || {};
-		if(!$.isObject(params)) {
-			params = {};
-		}
 		params.action = action;
 		params._ajax_nonce = _ajax_nonce;
 		$.post(_ajax_url, params, function(response) {

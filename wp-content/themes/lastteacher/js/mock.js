@@ -25,11 +25,15 @@
 	// timing related, these functions can not be treated for absolute times, only use them to get time intervals, also this is unreliable because it depends on the system clock
 	var time = (function() {
 		var time = {};
+
+		// a polyfill for Date.now() for ancient browsers
 		if (!Date.now) {
 			Date.now = function() {
 				return new Date().getTime();
 			};
 		}
+
+		// using the highest resolution timer available for use, performance.now() for newest browsers or fallback to same old method for old browsers
 		if (window.performance.now) {
 			time.getTimestamp = function() {
 				return window.performance.now();
@@ -57,6 +61,8 @@
 				})();
 			}
 		}
+
+		return time;
 	})();
 
 	// functions to handle the app

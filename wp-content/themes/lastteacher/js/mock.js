@@ -74,6 +74,7 @@
 					window.location.reload(true);
 				}
 			} else {
+				console.log(response);
 				//@todo new mock session created, and loaded, save the info and show the appropriate forms to user
 			}
 		});
@@ -81,5 +82,6 @@
 
 	window.initiate_mock = function(params) {
 		console.log(params);
+		new_mock_session(params.ID);
 	};
 })(jQuery, window);

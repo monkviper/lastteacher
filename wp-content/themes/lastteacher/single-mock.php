@@ -56,8 +56,8 @@
 			<div class="name"></div>
 			<h3>Time Left</h3>
 			<span class="timer">
-				<span class="hours"></span>
 				<span class="minutes"></span>
+				<span class="seconds"></span>
 			</span>
 			<div class="questions"></div>
 		</div>

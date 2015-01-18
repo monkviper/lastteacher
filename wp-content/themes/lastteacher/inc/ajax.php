@@ -21,6 +21,11 @@ class LT_AJAX {
 		echo json_encode( $result );
 		die();
 	}
+
+	function register_new_mock( $params ) {
+		$mock_id = $params['mock'];
+		$mock = new LT_Mock($mock_id);
+	}
 }
 
 new LT_AJAX();

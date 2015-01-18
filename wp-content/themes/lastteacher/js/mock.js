@@ -1,4 +1,5 @@
 (function($, window) {
+	// ajax related
 	var _ajax_url = lt_ajax_url;
 	var _ajax_nonce = lt_ajax_nonce;
 	var ajax = function(action, params, callback) {
@@ -13,6 +14,7 @@
 		}, 'json');
 	};
 
+	// major variables needed throughout
 	var container = $('#mock');
 	var placeholder = $('#placeholder');
 	var main = $('#main');
@@ -20,6 +22,44 @@
 	var instructions = $('#instructions');
 	var finished = $('#finished');
 
+	// timing related, these functions can not be treated for absolute times, only use them to get time intervals, also this is unreliable because it depends on the system clock
+	var time = (function() {
+		var time = {};
+		if (!Date.now) {
+			Date.now = function() {
+				return new Date().getTime();
+			};
+		}
+		if (window.performance.now) {
+			time.getTimestamp = function() {
+				return window.performance.now();
+			};
+		} else {
+			if (window.performance.webkitNow) {
+				time.getTimestamp = function() {
+					return window.performance.webkitNow();
+				};
+			} else {
+				time.getTimestamp = (function() {
+					var current = Date.now();
+					setInterval(function() {
+						var next = Date.now();
+						var diff = Math.abs(next - (current + 100));
+						if(100 < diff) {
+							current = next;
+						} else {
+							current += 100;
+						}
+					}, 100);
+					return function() {
+						return current;
+					};
+				})();
+			}
+		}
+	})();
+
+	// functions to handle the app
 	var new_mock_session = function(mock_id) {
 		container.addClass('preparing');
 		ajax('register_new_mock', {mock: mock_id}, function(response) {

@@ -1,7 +1,7 @@
 <?php
 
 /* Last Teacher Theme Version */
-define( 'LT_VERSION', '0.1' );
+define( 'LT_VERSION', '0.1.2' );
 
 /* Last Teacher Theme Directory Paths */
 define( 'LT_THEME_DIR', get_template_directory() );
@@ -37,11 +37,11 @@ function lt_setup() {
 	/** Loading the other admin hooks, these need to run on ajax too */
 	require_once LT_INC_DIR . '/admin.php';
 
-	if(LT_VERSION !== get_option('lt_version')) {
+	if( LT_VERSION !== get_option( 'lt_version' ) ) {
 		/** Updating the database for our theme, this should be done asap to prevent any problems */
 		require_once LT_INC_DIR . '/db-setup.php';
 
-		update_option('lt_version', LT_VERSION);
+		update_option( 'lt_version', LT_VERSION );
 	}
 }
 

@@ -56,3 +56,23 @@ $sql = "CREATE TABLE $table_name (
 ) $charset_collate;";
 
 dbDelta( $sql );
+
+$table_name = $wpdb->prefix . 'exams_records';
+
+$sql = "CREATE TABLE $table_name (
+  ID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  mock bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  user bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  started_at DATETIME NOT NULL,
+  last_checkpoint_at DATETIME NOT NULL,
+  sql_started_at DATETIME NOT NULL,
+  sql_last_checkpoint_at DATETIME NOT NULL,
+  total_time_lapsed int(5) NOT NULL,
+  subjectwise_time_lapsed int(5) NOT NULL,
+  questions text NOT NULL,
+  PRIMARY KEY  (ID)
+) $charset_collate;";
+// questions is a serialized array of question id, answer, time taken on question, a flag if marked for review
+//@todo add columns for the calculated results data
+
+dbDelta( $sql );

@@ -71,3 +71,8 @@ require_once LT_INC_DIR . '/wp-tweaks.php';
 /** Include the class that holds the exams */
 require_once LT_INC_DIR . '/classes.php';
 
+if( LT_AJAX ) {
+	/** Include the class that holds the exams */
+	require_once LT_INC_DIR . '/ajax.php';
+}
+

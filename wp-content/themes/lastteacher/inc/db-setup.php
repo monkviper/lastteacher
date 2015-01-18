@@ -70,8 +70,27 @@ $sql = "CREATE TABLE $table_name (
   questions text NOT NULL,
   completed tinyint(1) NOT NULL,
   PRIMARY KEY  (ID)
+  KEY mock_user (mock, user)
+  KEY mock_user_completed (mock, user, completed)
 ) $charset_collate;";
 // questions is a serialized array of question id, answer, time taken on question, a flag if marked for review
 //@todo add columns for the calculated results data
+
+dbDelta( $sql );
+
+$table_name = $wpdb->prefix . 'exams_requests_logs';
+
+$sql = "CREATE TABLE $table_name (
+  ID bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  record_id bigint(20) UNSIGNED NOT NULL,
+  mock bigint(20) UNSIGNED NOT NULL,
+  user bigint(20) UNSIGNED NOT NULL,
+  received_at DATETIME NOT NULL,
+  from_ip VARBINARY(16) NOT NULL,
+  data text NOT NULL,
+  PRIMARY KEY  (ID)
+  KEY exam_record (record_id)
+  KEY mock_user (mock, user)
+) $charset_collate;";
 
 dbDelta( $sql );

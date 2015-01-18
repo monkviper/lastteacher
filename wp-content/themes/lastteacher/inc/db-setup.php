@@ -65,8 +65,6 @@ $sql = "CREATE TABLE $table_name (
   user bigint(20) UNSIGNED NOT NULL,
   started_at DATETIME NOT NULL,
   last_checkpoint_at DATETIME NOT NULL,
-  sql_started_at DATETIME NOT NULL,
-  sql_last_checkpoint_at DATETIME NOT NULL,
   total_time_lapsed int(5) NOT NULL,
   subjectwise_time_lapsed text NOT NULL,
   questions text NOT NULL,

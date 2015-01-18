@@ -67,6 +67,24 @@ class LT_Question extends LT_MODEL {
 		$this->_table = $wpdb->prefix . 'questions';
 	}
 
+	function getWPId() {
+		if( intval( $this->id ) ) {
+			$query = new WP_Query( array(
+					'post_type'     => 'question',
+					'fields'        => 'ids',
+					'meta_key'      => '_saved_ext_id',
+					'meta_value'    => $this->id,
+					'post_per_page' => 1
+			) );
+			$value = current( $query->posts );
+			if( $value ) {
+				return $value;
+			}
+		}
+
+		return 0;
+	}
+
 	/**
 	 * @param string $answer
 	 */
@@ -203,6 +221,24 @@ class LT_Subject extends LT_MODEL {
 		global $wpdb;
 
 		$this->_table = $wpdb->prefix . 'subjects';
+	}
+
+	function getWPId() {
+		if( intval( $this->id ) ) {
+			$query = new WP_Query( array(
+					'post_type'     => 'subject',
+					'fields'        => 'ids',
+					'meta_key'      => '_saved_ext_id',
+					'meta_value'    => $this->id,
+					'post_per_page' => 1
+			) );
+			$value = current( $query->posts );
+			if( $value ) {
+				return $value;
+			}
+		}
+
+		return 0;
 	}
 
 	/**
@@ -354,6 +390,24 @@ class LT_Mock extends LT_Subject {
 		global $wpdb;
 
 		$this->_table = $wpdb->prefix . 'mocks';
+	}
+
+	function getWPId() {
+		if( intval( $this->id ) ) {
+			$query = new WP_Query( array(
+					'post_type'     => 'mock',
+					'fields'        => 'ids',
+					'meta_key'      => '_saved_ext_id',
+					'meta_value'    => $this->id,
+					'post_per_page' => 1
+			) );
+			$value = current( $query->posts );
+			if( $value ) {
+				return $value;
+			}
+		}
+
+		return 0;
 	}
 
 	protected function _populate( $row ) {
